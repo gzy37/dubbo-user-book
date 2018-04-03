@@ -94,9 +94,9 @@ wrapper.appendChild(el);
 | loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否缺省异步执行 |
 | connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 每个服务对每个提供者的最大连接数，rmi、http、hessian等短连接协议支持此配置，dubbo协议长连接不支持此配置 |
-| generic | generic | 布尔 | 可选 | false | 服务<br>治理 | 是否缺省泛化接口，如果为泛化接口，将返回GenericService |
-| check | check | 布尔 | 可选 | true | 服务<br>治理 | 启动时检查提供者是否存在，true报错，false忽略 |
-| proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk/javassist |
+| generic | generic | 布尔 | 可选 | false | 服务<br>治理 | 是否缺省泛化接口 |
+| check | check | 布尔 | 可选 | true | 服务<br>治理 | 启动时检查提供者是否存在 |
+| proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk、javassist |
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 调用服务负责人，用于服务治理 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者每服务每方法最大并发调用数 |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |

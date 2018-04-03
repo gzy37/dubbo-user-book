@@ -59,7 +59,7 @@ wrapper.appendChild(el);
 | --- | --- | ---- | --- | --- | --- | --- |
 | name | | 字符串 | <b>必填</b> | | 标识 | 方法名 |
 | timeout | timeout | 整数 | 可选 | | 性能<br>调优 | 超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | | 性能<br>调优 | 服务调用重试次数(不包括第一次调用)，0为不需要重试 |
+| retries | retries | 整数 | 可选 | | 性能<br>调优 | 重试次数(不包括第一次调用)，0表示不需要重试 |
 | loadbalance | loadbalance | 字符串 | 可选 | | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | | 性能<br>调优 | 是否异步执行 |
 | sent | sent | 布尔 | 可选 | true | 性能<br>调优 | 异步调用时，true表示网络已发出数据 |
