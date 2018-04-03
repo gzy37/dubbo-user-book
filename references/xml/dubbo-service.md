@@ -84,7 +84,7 @@ wrapper.appendChild(el);
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
 | filter | service.filter | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | exporter.listener | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
-| protocol | | 字符串 | 可选 | | 配置<br>关联 | 暴露服务的协议，在多协议时使用，值为&lt;dubbo:protocol&gt;的id属性，多个协议ID用逗号分隔 |
+| protocol | | 字符串 | 可选 | | 配置<br>关联 | 暴露服务的协议，值为&lt;dubbo:protocol&gt;的id属性，多个协议ID用逗号分隔 |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务提供者所在的分层。如：biz、dao |
 | register | register | 布尔 | 可选 | true | 服务<br>治理 | 该协议的服务是否注册到注册中心 |
 
