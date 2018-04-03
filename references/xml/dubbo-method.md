@@ -61,7 +61,7 @@ wrapper.appendChild(el);
 | timeout | timeout | 整数 | 可选 | | 性能<br>调优 | 方法调用超时时间(毫秒) |
 | retries | retries | 整数 | 可选 | | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
 | loadbalance | loadbalance | 字符串 | 可选 | | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive |
-| async | async | 布尔 | 可选 | | 性能<br>调优 | 是否异步执行，不可靠异步，只是忽略返回值，不阻塞执行线程 |
+| async | async | 布尔 | 可选 | | 性能<br>调优 | 是否异步执行 |
 | sent | sent | 布尔 | 可选 | true | 性能<br>调优 | 异步调用时，标记sent=true时，表示网络已发出数据 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者最大并发调用限制 |
 | executes | executes | 整数 | 可选 | 0 | 性能<br>调优 | 每服务每方法最大使用线程数限制，此属性只在&lt;dubbo:method&gt;作为&lt;dubbo:service&gt;子标签时有效 |
