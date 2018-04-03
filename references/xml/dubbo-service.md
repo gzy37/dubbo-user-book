@@ -61,12 +61,12 @@ wrapper.appendChild(el);
 | version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议使用两位数字版本 |
 | group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，当一个接口有多个实现，可以用分组区分 |
 | path | &lt;path&gt; | 字符串 | 可选 | 接口名 | 服务<br>发现 | 服务路径 |
-| delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 延迟注册服务时间(毫秒) ，设为-1时，表示延迟到Spring容器初始化完成时暴露服务 |
-| timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 远程服务调用超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
-| connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数 |
+| delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 服务延迟注册时间(毫秒) ，设为-1表示Spring容器初始化完成暴露服务 |
+| timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 服务调用超时时间(毫秒) |
+| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 服务调用重试次数(不含第一次调用，不需要重试设为0) |
+| connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 最大连接数 |
 | loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive，分别表示：随机，轮循，最少活跃调用 |
-| async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否缺省异步执行，不可靠异步，只是忽略返回值，不阻塞执行线程 |
+| async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
 | stub | stub | 类<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省代理类名，即：接口名 + Local后缀，服务接口客户端本地代理类名，用于在客户端执行本地逻辑，如本地缓存等，该本地代理类的构造函数必须允许传入远程代理对象|
 | mock | mock | 类<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省Mock类名，即：接口名 + Mock后缀，服务接口调用失败Mock实现类，该Mock类必须有一个无参构造函数，与Local的区别在于，Local总是被执行，而Mock只在出现非业务异常(比如超时，网络异常等)时执行，Local在远程调用之前执行，Mock在远程调用后执行。 |
 | token | token | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 令牌验证，为空表示不开启，如果为true，表示随机生成动态令牌，否则使用静态令牌，令牌的作用是防止消费者绕过注册中心直接访问，保证注册中心的授权功能有效，如果使用点对点调用，需关闭令牌功能 |
@@ -80,11 +80,11 @@ wrapper.appendChild(el);
 | weight | weight | 整数 | 可选 | | 性能<br>调优 | 服务权重 |
 | executes | executes | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者每服务每方法最大可并行执行请求数 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者每服务每方法最大并发调用数 |
-| proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk/javassist |
+| proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk、javassist |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
 | filter | service.filter | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | exporter.listener | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
 | protocol | | 字符串 | 可选 | | 配置<br>关联 | 使用指定的协议暴露服务，在多协议时使用，值为&lt;dubbo:protocol&gt;的id属性，多个协议ID用逗号分隔 |
-| layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务提供者所在的分层。如：biz、dao、intl:web、china:acton。 |
+| layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务提供者所在的分层。如：biz、dao |
 | register | register | 布尔 | 可选 | true | 服务<br>治理 | 该协议的服务是否注册到注册中心 |
 
