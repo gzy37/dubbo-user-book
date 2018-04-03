@@ -68,7 +68,7 @@ wrapper.appendChild(el);
 | accepts | accepts | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供方最大可接受连接数 |
 | payload | payload | 整数 | 可选 | 88388608 | 性能<br>调优 | 请求及响应数据包大小限制，单位：字节 |
 | codec | codec | 字符串 | 可选 | dubbo | 性能<br>调优 | 协议编码方式 |
-| serialization | serialization | 字符串 | 可选 | dubbo协议:hessian2<br>rmi协议:java<br>http协议:json | 性能<br>调优 | 协议序列化方式，当协议支持多种序列化方式时使用，比如：dubbo协议的dubbo、hessian2、java，以及http协议的json等 |
+| serialization | serialization | 字符串 | 可选 | dubbo协议:hessian2<br>rmi协议:java<br>http协议:json | 性能<br>调优 | 协议序列化方式 |
 | accesslog | accesslog | 字符串<br>布尔 | 可选 | | 服务<br>治理 | true表示将向logger中输出访问日志，字符串表示把访问日志输出到指定文件 |
 | path | &lt;path&gt; | 字符串 | 可选 | | 服务<br>发现 | 提供者上下文路径，为服务path的前缀 |
 | transporter | transporter | 字符串 | 可选 | dubbo协议缺省为netty | 性能<br>调优 | 协议的服务端和客户端实现类型，比如：dubbo协议的mina、netty等，可以分拆为server和client配置 |
