@@ -89,7 +89,7 @@ table tr:hover {
 |  属性 |  对应URL参数 |  类型 |  是否<br>必填 |  缺省值 |  作用 |  描述 |
 | --- | --- | ---- | --- | --- | --- | --- |
 | filter | service.filter | string | 可选 | default | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
-| listener | exporter.listener | string | 可选 | default | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 | |
+| listener | exporter.listener | string | 可选 | default | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
 | protocol | | string | 可选 | | 配置<br>关联 | 使用指定的协议暴露服务，在多协议时使用，值为&lt;dubbo:protocol&gt;的id属性，多个协议ID用逗号分隔 |
 | layer | layer | string | 可选 | | 服务<br>治理 | 服务提供者所在的分层。如：biz、dao、intl:web、china:acton。 |
 | register | register | boolean | 可选 | true | 服务<br>治理 | 该协议的服务是否注册到注册中心 |
