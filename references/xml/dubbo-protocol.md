@@ -60,7 +60,7 @@ wrapper.appendChild(el);
 | --- | --- | ---- | --- | --- | --- | --- |
 | id | | 字符串 | 可选 | dubbo | 配置<br>关联 | 协议BeanId，可以在&lt;dubbo:service protocol=""&gt;中引用此ID，如果ID不填，缺省和name属性值一样，重复则在name后加序号。 |
 | name | &lt;protocol&gt; | 字符串 | <b>必填</b> | dubbo | 性能<br>调优 | 协议名称 |
-| port | &lt;port&gt; | 整数 | 可选 | dubbo协议缺省端口为20880，rmi协议缺省端口为1099，http和hessian协议缺省端口为80；如果配置为<b>-1</b> 或者 <b>没有</b>配置port，则会分配一个没有被占用的端口。Dubbo 2.4.0+，分配的端口在协议缺省端口的基础上增长，确保端口段可控。 | 服务<br>发现 | 服务端口 |
+| port | &lt;port&gt; | 整数 | 可选 | dubbo协议缺省端口为20880，rmi协议缺省端口为1099，http和hessian协议缺省端口为80；如果配置为<b>-1</b> 或者 <b>没有</b>配置port，则会分配一个没有被占用的端口。| 服务<br>发现 | 服务端口 |
 | host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | &#45;服务主机名，多网卡选择或指定VIP及域名时使用，为空则自动查找本机IP，&#45;建议不要配置，让Dubbo自动获取本机IP |
 | threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed、cached |
 | threads | threads | 整数 | 可选 | 100 | 性能<br>调优 | 服务线程池大小(固定大小) |
