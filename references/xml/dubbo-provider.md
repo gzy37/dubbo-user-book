@@ -74,18 +74,18 @@ wrapper.appendChild(el);
 | accepts | accepts | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者最大可接受连接数 |
 | version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议使用两位数字版本，如：1.0，通常在接口不兼容时版本号才需要升级 |
 | group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，当一个接口有多个实现，可以用分组区分 |
-| delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 延迟注册服务时间(毫秒)&#45; ，设为-1时，表示延迟到Spring容器初始化完成时暴露服务 |
-| timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 远程服务调用超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
+| delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 延迟注册服务时间(毫秒)，-1表示Spring容器初始化完成暴露服务 |
+| timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 超时时间(毫秒) |
+| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 重试次数(不包括第一次调用)，0表示不需要重试 |
 | connections | connections | 整数 | 可选 | 0 | 性能<br>调优 | 对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数 |
-| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive |
+| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
-| stub | stub | 布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省代理类名 |
-| mock | mock | 布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省Mock类名 |
-| token | token | 布尔 | 可选 | false | 服务<br>治理 | 令牌验证，为空表示不开启，如果为true，表示随机生成动态令牌 |
-| registry | registry | 字符串 | 可选 | 缺省向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
-| dynamic | dynamic | 布尔 | 可选 | true | 服务<br>治理 | 服务是否动态注册，如果设为false，注册后将显示后disable状态，需人工启用，并且服务提供者停止时，也不会自动取消册，需人工禁用。 |
-| accesslog | accesslog | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，将向logger中输出访问日志，也可填写访问日志文件路径，直接把访问日志输出到指定文件 |
+| stub | stub | 布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省代理类名 |
+| mock | mock | 布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省Mock类名 |
+| token | token | 布尔 | 可选 | false | 服务<br>治理 | 令牌验证，false表示不开启，true表示随机生成动态令牌 |
+| registry | registry | 字符串 | 可选 | 缺省向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为registry的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
+| dynamic | dynamic | 布尔 | 可选 | true | 服务<br>治理 | 是否动态注册，false表示需人工启用/禁用服务。 |
+| accesslog | accesslog | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | true表示向logger中输出访问日志，字符串表示把访问日志输出到指定文件 |
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 服务负责人，用于服务治理 |
 | document | document | 字符串 | 可选 | | 服务<br>治理 | 服务文档URL |
 | weight | weight | 整数 | 可选 | | 性能<br>调优 | 服务权重 |
@@ -93,8 +93,8 @@ wrapper.appendChild(el);
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者每服务每方法最大并发调用数 |
 | proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk、javassist |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
-| deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 服务是否过时，如果设为true，消费方引用时将打印服务过时警告error日志 |
-| queues | queues | 整数 | 可选 | 0 | 性能<br>调优 | 线程池队列大小，当线程池满时，排队等待执行的队列大小，建议不要设置，当线程程池时应立即失败，重试其它服务提供机器，而不是排队，除非有特殊需求。 |
+| deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 服务是否过时，true表示消费方引用时将打印服务过时警告error日志 |
+| queues | queues | 整数 | 可选 | 0 | 性能<br>调优 | 线程池队列大小，当线程池满时，排队等待执行的队列大小，建议不要设置，当线程池满时应立即失败，重试其它服务提供机器。 |
 | charset | charset | 字符串 | 可选 | UTF-8 | 性能<br>调优 | 序列化编码 |
 | buffer | buffer | 整数 | 可选 | 8192 | 性能<br>调优 | 网络读写缓冲区大小 |
 | iothreads | iothreads | 整数 | 可选 | CPU + 1 | 性能<br>调优 | IO线程池，接收网络读写中断，以及序列化和反序列化，不处理业务，业务线程池参见threads配置，此线程池和CPU相关，不建议配置。 |
