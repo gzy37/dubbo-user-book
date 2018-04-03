@@ -62,10 +62,10 @@ wrapper.appendChild(el);
 | --- | --- | ---- | --- | --- | --- | --- |
 | id | | 字符串 | 可选 | | 配置<br>关联 | 注册中心BeanId |
 | address | &lt;host:port&gt; | 字符串 | <b>必填</b> | | 服务<br>发现 | 注册中心服务器地址，端口缺省为9090，同一集群内的多个地址用逗号分隔，如：ip:port,ip:port，不同集群的注册中心，请配置多个registry标签 |
-| protocol | &lt;protocol&gt; | 字符串 | 可选 | dubbo | 服务<br>发现 | 注同中心地址协议，支持dubbo, http, local三种协议，分别表示，dubbo地址，http地址，本地注册中心 |
+| protocol | &lt;protocol&gt; | 字符串 | 可选 | dubbo | 服务<br>发现 | 注同中心地址协议，支持dubbo, http, local三种协议 |
 | port | &lt;port&gt; | 整数 | 可选 | 9090 | 服务<br>发现 | 注册中心缺省端口 |
-| username | &lt;username&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心用户名，如果注册中心不需要验证可不填 |
-| password | &lt;password&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心密码，如果注册中心不需要验证可不填 |
+| username | &lt;username&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心用户名 |
+| password | &lt;password&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心密码 |
 | transport | registry.<br>transporter | 字符串 | 可选 | netty | 性能<br>调优 | 网络传输方式，可选mina、netty |
 | timeout | registry.<br>timeout | 整数 | 可选 | 5000 | 性能<br>调优 | 注册中心请求超时时间(毫秒) |
 | session | registry.<br>session | 整数 | 可选 | 60000 | 性能<br>调优 | 注册中心会话超时时间(毫秒) |
