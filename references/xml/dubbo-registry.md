@@ -66,11 +66,11 @@ wrapper.appendChild(el);
 | port | &lt;port&gt; | 整数 | 可选 | 9090 | 服务<br>发现 | 注册中心缺省端口，当address没有带端口时使用此端口做为缺省值 |
 | username | &lt;username&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心用户名，如果注册中心不需要验证可不填 |
 | password | &lt;password&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心密码，如果注册中心不需要验证可不填 |
-| transport | registry.transporter | 字符串 | 可选 | netty | 性能<br>调优 | 网络传输方式，可选mina、netty |
-| timeout | registry.timeout | 整数 | 可选 | 5000 | 性能<br>调优 | 注册中心请求超时时间(毫秒) |
-| session | registry.session | 整数 | 可选 | 60000 | 性能<br>调优 | 注册中心会话超时时间(毫秒)，用于检测提供者非正常断线后的脏数据，比如用心跳检测的实现，此时间就是心跳间隔，不同注册中心实现不一样。 |
-| file | registry.file | 字符串 | 可选 | | 服务<br>治理 | 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储 |
-| wait | registry.wait | 整数 | 可选 | 0 | 性能<br>调优 | 停止时等待通知完成时间(毫秒) |
+| transport | registry.<br>transporter | 字符串 | 可选 | netty | 性能<br>调优 | 网络传输方式，可选mina、netty |
+| timeout | registry.<br>timeout | 整数 | 可选 | 5000 | 性能<br>调优 | 注册中心请求超时时间(毫秒) |
+| session | registry.<br>session | 整数 | 可选 | 60000 | 性能<br>调优 | 注册中心会话超时时间(毫秒)，用于检测提供者非正常断线后的脏数据，比如用心跳检测的实现，此时间就是心跳间隔，不同注册中心实现不一样。 |
+| file | registry.<br>file | 字符串 | 可选 | | 服务<br>治理 | 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储 |
+| wait | registry.<br>wait | 整数 | 可选 | 0 | 性能<br>调优 | 停止时等待通知完成时间(毫秒) |
 | check | check | 布尔 | 可选 | true | 服务<br>治理 | 注册中心不存在时，是否报错 |
 | register | register | 布尔 | 可选 | true | 服务<br>治理 | 是否向注册中心注册服务，false表示只订阅不注册 |
 | subscribe | subscribe | 布尔 | 可选 | true | 服务<br>治理 | 是否向注册中心订阅服务，false表示只注册不订阅 |
