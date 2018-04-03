@@ -72,7 +72,7 @@ wrapper.appendChild(el);
 | async | async | 布尔 | 可选 |  | 性能<br>调优 | 是否异步执行，默认consumer的async |
 | generic | generic | 布尔 | 可选 |  | 服务<br>治理 | 是否缺省泛化接口，默认consumer的generic |
 | check | check | 布尔 | 可选 |  | 服务<br>治理 | 启动时检查提供者是否存在，默认consumer的check |
-| cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、 threadlocal、 jcache等 |
+| cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、threadlocal、jcache等 |
 | validation | validation | 布尔 | 可选 | | 服务<br>治理 | 是否启用JSR303标准注解验证，如果启用，将对方法参数上的注解进行校验 |
 | proxy | proxy | 布尔 | 可选 | javassist | 性能<br>调优 | 选择动态代理实现策略，可选：javassist、 jdk |
 | client | client | 字符串 | 可选 | | 性能<br>调优 | 客户端传输类型，如Dubbo协议的netty或mina。 |
