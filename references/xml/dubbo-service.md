@@ -65,16 +65,16 @@ wrapper.appendChild(el);
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 服务调用超时时间(毫秒) |
 | retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 服务调用重试次数(不含第一次调用，不需要重试设为0) |
 | connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 最大连接数 |
-| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random(随机)、roundrobin(轮循)、leastactive(最少活跃调用) |
+| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
-| stub | stub | 类<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省代理类名|
-| mock | mock | 类<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省Mock类名 |
+| stub | stub | 类<br>布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省代理类名|
+| mock | mock | 类<br>布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省Mock类名 |
 | token | token | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 令牌验证，false表示不开启，true表示随机生成动态令牌，字符串表示使用静态令牌 |
 | registry | | 字符串 | 可选 | 向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
-| provider | | 字符串 | 可选 | 缺使用第一个provider配置 | 配置<br>关联 | 指定provider，值为&lt;dubbo:provider&gt;的id属性 |
+| provider | | 字符串 | 可选 | 使用第一个provider配置 | 配置<br>关联 | 指定provider，值为&lt;dubbo:provider&gt;的id属性 |
 | deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 是否过时，设为true消费方引用时将打印服务过时警告error日志 |
 | dynamic | dynamic | 布尔 | 可选 | true | 服务<br>治理 | 是否动态注册，设为false后需人工启用/禁用服务。 |
-| accesslog | accesslog | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，将向logger中输出访问日志，也可填写访问日志文件路径，直接把访问日志输出到指定文件 |
+| accesslog | accesslog | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | true表示将向logger中输出访问日志，字符串表示日志文件路径 |
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 服务负责人 |
 | document | document | 字符串 | 可选 | | 服务<br>治理 | 服务文档URL |
 | weight | weight | 整数 | 可选 | | 性能<br>调优 | 服务权重 |
