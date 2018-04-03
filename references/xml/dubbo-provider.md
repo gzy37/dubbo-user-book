@@ -63,10 +63,10 @@ wrapper.appendChild(el);
 | threads | threads | 整数 | 可选 | 100 | 性能<br>调优 | 服务线程池大小(固定大小) |
 | payload | payload | 整数 | 可选 | 88388608 | 性能<br>调优 | 请求及响应数据包大小限制，单位：字节 |
 | path | &lt;path&gt; | 字符串 | 可选 | | 服务<br>发现 | 提供者上下文路径，为服务path的前缀 |
-| server | server | 字符串 | 可选 | dubbo协议缺省为netty，http协议缺省为servlet | 性能<br>调优 | 协议的服务器端实现类型，比如：dubbo协议的mina、netty等，http协议的jetty、servlet等 |
-| client | client | 字符串 | 可选 | dubbo协议缺省为netty | 性能<br>调优 | 协议的客户端实现类型，比如：dubbo协议的mina,netty等 |
+| server | server | 字符串 | 可选 | dubbo协议缺省为netty，http协议缺省为servlet | 性能<br>调优 | 协议的服务器端实现类型 |
+| client | client | 字符串 | 可选 | dubbo协议缺省为netty | 性能<br>调优 | 协议的客户端实现类型 |
 | codec | codec | 字符串 | 可选 | dubbo | 性能<br>调优 | 协议编码方式 |
-| serialization | serialization | 字符串 | 可选 | dubbo协议缺省为hessian2，rmi协议缺省为java，http协议缺省为json | 性能<br>调优 | 协议序列化方式，当协议支持多种序列化方式时使用，比如：dubbo协议的dubbo、hessian2、java，以及http协议的json,xml等 |
+| serialization | serialization | 字符串 | 可选 | dubbo协议缺省为hessian2，rmi协议缺省为java，http协议缺省为json | 性能<br>调优 | 协议序列化方式，当协议支持多种序列化方式时使用 |
 | default | | 布尔 | 可选 | false | 配置<br>关联 | 是否为缺省协议，用于多协议 |
 | filter | filter | 字符串 | 可选 | | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | listener | 字符串 | 可选 | | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
