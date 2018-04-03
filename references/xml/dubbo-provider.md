@@ -101,5 +101,3 @@ wrapper.appendChild(el);
 | telnet | telnet | 字符串 | 可选 | | 服务<br>治理 | 所支持的telnet命令，多个命令用逗号分隔 |
 | contextpath | contextpath | 字符串 | 可选 | 缺省为空串 | 服务<br>治理 | |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务提供者所在的分层。如：biz、dao。 |
-
-
