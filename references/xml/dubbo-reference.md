@@ -61,11 +61,11 @@ wrapper.appendChild(el);
 | id | | 字符串 | <b>必填</b> | | 配置<br>关联 | 服务引用BeanId |
 | interface | | 类 | <b>必填</b> | | 服务<br>发现 | 服务接口名 |
 | version | version | 字符串 | 可选 | | 服务<br>发现 | 服务版本，与服务提供者的版本一致 |
-| group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，必须和服务提供方一致 |
+| group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，须和服务提供方一致 |
 | url | url | 字符串 | 可选 | | 服务<br>治理 | 点对点直连服务提供者地址，将绕过注册中心 |
 | stub | stub | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口客户端本地代理类名 |
-| mock | mock | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口调用失败Mock实现类名|
-| timeout | timeout | 整数 | 可选 |  | 性能<br>调优 | 超时时间(毫秒)，默认consumer的timeout |
+| mock | mock | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口调用Mock实现类名|
+| timeout | timeout | 整数 | 可选 |  | 性能<br>调优 | 超时时间(毫秒)默认consumer的timeout |
 | retries | retries | 整数 | 可选 |  | 性能<br>调优 | 重试次数(不含第一次调用)，0表示不需要重试，默认consumer的retries |
 | connections | connections | 整数 | 可选 |  | 性能<br>调优 | 对每个提供者的最大连接数，默认consumer的connections |
 | loadbalance | loadbalance | 字符串 | 可选 |  | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive，默认consumer的loadbalance |
