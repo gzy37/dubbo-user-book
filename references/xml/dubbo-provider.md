@@ -67,7 +67,7 @@ wrapper.appendChild(el);
 | client | client | 字符串 | 可选 | dubbo协议缺省为netty | 性能<br>调优 | 协议的客户端实现类型，比如：dubbo协议的mina,netty等 |
 | codec | codec | 字符串 | 可选 | dubbo | 性能<br>调优 | 协议编码方式 |
 | serialization | serialization | 字符串 | 可选 | dubbo协议缺省为hessian2，rmi协议缺省为java，http协议缺省为json | 性能<br>调优 | 协议序列化方式，当协议支持多种序列化方式时使用，比如：dubbo协议的dubbo、hessian2、java，以及http协议的json,xml等 |
-| default | | boolean | 可选 | false | 配置<br>关联 | 是否为缺省协议，用于多协议 |
+| default | | 布尔 | 可选 | false | 配置<br>关联 | 是否为缺省协议，用于多协议 |
 | filter | filter | 字符串 | 可选 | | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | listener | 字符串 | 可选 | | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
 | threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed、cached |
@@ -79,13 +79,13 @@ wrapper.appendChild(el);
 | retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
 | connections | connections | 整数 | 可选 | 0 | 性能<br>调优 | 对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数 |
 | loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive |
-| async | async | boolean | 可选 | false | 性能<br>调优 | 是否缺省异步执行，不可靠异步，只是忽略返回值，不阻塞执行线程 |
-| stub | stub | boolean | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省代理类名，即：接口名 + Local后缀。 |
-| mock | mock | boolean | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省Mock类名，即：接口名 + Mock后缀。 |
-| token | token | boolean | 可选 | false | 服务<br>治理 | 令牌验证，为空表示不开启，如果为true，表示随机生成动态令牌 |
+| async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
+| stub | stub | 布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省代理类名 |
+| mock | mock | 布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省Mock类名 |
+| token | token | 布尔 | 可选 | false | 服务<br>治理 | 令牌验证，为空表示不开启，如果为true，表示随机生成动态令牌 |
 | registry | registry | 字符串 | 可选 | 缺省向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
-| dynamic | dynamic | boolean | 可选 | true | 服务<br>治理 | 服务是否动态注册，如果设为false，注册后将显示后disable状态，需人工启用，并且服务提供者停止时，也不会自动取消册，需人工禁用。 |
-| accesslog | accesslog | 字符串<br>boolean | 可选 | false | 服务<br>治理 | 设为true，将向logger中输出访问日志，也可填写访问日志文件路径，直接把访问日志输出到指定文件 |
+| dynamic | dynamic | 布尔 | 可选 | true | 服务<br>治理 | 服务是否动态注册，如果设为false，注册后将显示后disable状态，需人工启用，并且服务提供者停止时，也不会自动取消册，需人工禁用。 |
+| accesslog | accesslog | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，将向logger中输出访问日志，也可填写访问日志文件路径，直接把访问日志输出到指定文件 |
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 服务负责人，用于服务治理 |
 | document | document | 字符串 | 可选 | | 服务<br>治理 | 服务文档URL |
 | weight | weight | 整数 | 可选 | | 性能<br>调优 | 服务权重 |
@@ -93,7 +93,7 @@ wrapper.appendChild(el);
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者每服务每方法最大并发调用数 |
 | proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk、javassist |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
-| deprecated | deprecated | boolean | 可选 | false | 服务<br>治理 | 服务是否过时，如果设为true，消费方引用时将打印服务过时警告error日志 |
+| deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 服务是否过时，如果设为true，消费方引用时将打印服务过时警告error日志 |
 | queues | queues | 整数 | 可选 | 0 | 性能<br>调优 | 线程池队列大小，当线程池满时，排队等待执行的队列大小，建议不要设置，当线程程池时应立即失败，重试其它服务提供机器，而不是排队，除非有特殊需求。 |
 | charset | charset | 字符串 | 可选 | UTF-8 | 性能<br>调优 | 序列化编码 |
 | buffer | buffer | 整数 | 可选 | 8192 | 性能<br>调优 | 网络读写缓冲区大小 |
@@ -101,4 +101,5 @@ wrapper.appendChild(el);
 | telnet | telnet | 字符串 | 可选 | | 服务<br>治理 | 所支持的telnet命令，多个命令用逗号分隔 |
 | contextpath | contextpath | 字符串 | 可选 | 缺省为空串 | 服务<br>治理 | |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务提供者所在的分层。如：biz、dao。 |
+
 
