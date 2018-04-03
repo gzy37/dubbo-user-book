@@ -60,7 +60,7 @@ wrapper.appendChild(el);
 | --- | --- | ---- | --- | --- | --- | --- |
 | id | | 字符串 | 可选 | dubbo | 配置<br>关联 | 协议BeanId |
 | name | &lt;protocol&gt; | 字符串 | <b>必填</b> | dubbo | 性能<br>调优 | 协议名称 |
-| port | &lt;port&gt; | 整数 | 可选 | dubbo协议:20880<br>rmi协议:1099<br>http和hessian协议:80<br>如果配置为<b>-1</b> 或者 <b>没有</b>配置，则会分配一个未占用的端口。| 服务<br>发现 | 服务端口 |
+| port | &lt;port&gt; | 整数 | 可选 | dubbo协议:20880，rmi协议:1099，http和hessian协议:80。| 服务<br>发现 | 服务端口，<b>-1</b> 或者 <b>没有</b>配置，则会分配一个未占用的端口 |
 | host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | 服务主机名，多网卡选择或指定VIP及域名时使用，为空则自动查找本机IP |
 | threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed、cached |
 | threads | threads | 整数 | 可选 | 100 | 性能<br>调优 | 服务线程池大小(固定大小) |
