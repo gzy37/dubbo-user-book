@@ -67,17 +67,11 @@ wrapper.appendChild(el);
 | connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数 |
 | loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive，分别表示：随机，轮循，最少活跃调用 |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否缺省异步执行，不可靠异步，只是忽略返回值，不阻塞执行线程 |
-
-| 属性 | 对应URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
-| --- | --- | ---- | --- | --- | --- | --- |
 | stub | stub | 类<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省代理类名，即：接口名 + Local后缀，服务接口客户端本地代理类名，用于在客户端执行本地逻辑，如本地缓存等，该本地代理类的构造函数必须允许传入远程代理对象|
 | mock | mock | 类<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，表示使用缺省Mock类名，即：接口名 + Mock后缀，服务接口调用失败Mock实现类，该Mock类必须有一个无参构造函数，与Local的区别在于，Local总是被执行，而Mock只在出现非业务异常(比如超时，网络异常等)时执行，Local在远程调用之前执行，Mock在远程调用后执行。 |
 | token | token | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 令牌验证，为空表示不开启，如果为true，表示随机生成动态令牌，否则使用静态令牌，令牌的作用是防止消费者绕过注册中心直接访问，保证注册中心的授权功能有效，如果使用点对点调用，需关闭令牌功能 |
 | registry | | 字符串 | 可选 | 缺省向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
 | provider | | 字符串 | 可选 | 缺使用第一个provider配置 | 配置<br>关联 | 指定provider，值为&lt;dubbo:provider&gt;的id属性 |
-
-| 属性 | 对应URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
-| --- | --- | ---- | --- | --- | --- | --- |
 | deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 服务是否过时，如果设为true，消费方引用时将打印服务过时警告error日志 |
 | dynamic | dynamic | 布尔 | 可选 | true | 服务<br>治理 | 服务是否动态注册，如果设为false，注册后将显示后disable状态，需人工启用，并且服务提供者停止时，也不会自动取消册，需人工禁用。 |
 | accesslog | accesslog | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 设为true，将向logger中输出访问日志，也可填写访问日志文件路径，直接把访问日志输出到指定文件 |
@@ -88,9 +82,6 @@ wrapper.appendChild(el);
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者每服务每方法最大并发调用数 |
 | proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk/javassist |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
-
-| 属性 | 对应URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
-| --- | --- | ---- | --- | --- | --- | --- |
 | filter | service.filter | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | exporter.listener | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
 | protocol | | 字符串 | 可选 | | 配置<br>关联 | 使用指定的协议暴露服务，在多协议时使用，值为&lt;dubbo:protocol&gt;的id属性，多个协议ID用逗号分隔 |
