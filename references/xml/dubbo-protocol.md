@@ -61,14 +61,14 @@ wrapper.appendChild(el);
 | id | | 字符串 | 可选 | dubbo | 配置<br>关联 | 协议BeanId |
 | name | &lt;protocol&gt; | 字符串 | <b>必填</b> | dubbo | 性能<br>调优 | 协议名称 |
 | port | &lt;port&gt; | 整数 | 可选 | dubbo协议:20880，rmi协议:1099，http和hessian协议:80。| 服务<br>发现 | 服务端口，<b>-1</b> 或者 <b>没有</b>配置，则会分配一个未占用的端口 |
-| host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | 服务主机名，多网卡选择或指定VIP及域名时使用，为空则自动查找本机IP |
+| host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | 服务主机名，为空则自动查找本机IP |
 | threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed、cached |
 | threads | threads | 整数 | 可选 | 100 | 性能<br>调优 | 服务线程池大小(固定大小) |
 | iothreads | threads | 整数 | 可选 | cpu个数+1 | 性能<br>调优 | io线程池大小(固定大小) |
 | accepts | accepts | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供方最大可接受连接数 |
 | payload | payload | 整数 | 可选 | 88388608 | 性能<br>调优 | 请求及响应数据包大小限制，单位：字节 |
 | codec | codec | 字符串 | 可选 | dubbo | 性能<br>调优 | 协议编码方式 |
-| serialization | serialization | 字符串 | 可选 | dubbo协议:hessian2<br>rmi协议:java<br>http协议:json | 性能<br>调优 | 协议序列化方式 |
+| serialization | serialization | 字符串 | 可选 | dubbo协议:hessian2，rmi协议:java，http协议:json | 性能<br>调优 | 协议序列化方式 |
 | accesslog | accesslog | 字符串<br>布尔 | 可选 | | 服务<br>治理 | true表示将向logger中输出访问日志，字符串表示把访问日志输出到指定文件 |
 | path | &lt;path&gt; | 字符串 | 可选 | | 服务<br>发现 | 提供者上下文路径，为服务path的前缀 |
 | transporter | transporter | 字符串 | 可选 | dubbo协议缺省为netty | 性能<br>调优 | 协议的服务端和客户端实现类型，比如：dubbo协议的mina、netty等，可以分拆为server和client配置 |
