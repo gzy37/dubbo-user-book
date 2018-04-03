@@ -63,7 +63,7 @@ wrapper.appendChild(el);
 | name | application | 字符串 | <b>必填</b> | | 服务<br>治理 | 当前应用名称，用于注册中心计算应用间依赖关系 |
 | version | version | 字符串 | 可选 | | 服务<br>治理 | 当前应用的版本 |
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 应用负责人，用于服务治理 |
-| organization | organization | string | 可选 | | 服务<br>治理 | 组织名称，用于注册中心区分服务来源 |
+| organization | organization | 字符串 | 可选 | | 服务<br>治理 | 组织名称，用于注册中心区分服务来源 |
 | architecture| architecture | 字符串 | 可选 | | 服务<br>治理 | 用于服务分层对应的架构。如，intl、china。不同的架构使用不同的分层。 |
 | environment | environment | 字符串 | 可选 | | 服务<br>治理 | 应用环境，如：develop、test、product，不同环境使用不同的缺省值，以及作为只用于开发测试功能的限制条件 |
 | compiler | compiler | 字符串 | 可选 | javassist | 性能<br>调优 | Java字节码编译器，用于动态类的生成，可选：jdk或javassist |
