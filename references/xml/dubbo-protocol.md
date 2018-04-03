@@ -81,5 +81,5 @@ wrapper.appendChild(el);
 | heartbeat | heartbeat | 整数 | 可选 | 0 | 性能<br>调优 | 心跳间隔，对于长连接，当物理层断开时，比如拔网线，TCP的FIN消息来不及发送，对方收不到断开事件，此时需要心跳来帮助检查连接是否已断开 |
 | telnet | telnet | 字符串 | 可选 | | 服务<br>治理 | 所支持的telnet命令，多个命令用逗号分隔 |
 | register | register | 布尔 | 可选 | true | 服务<br>治理 | 该协议的服务是否注册到注册中心 |
-| contextpath | contextpath | 字符串 | 可选 | 缺省为空串 | 服务<br>治理 | |
+| contextpath | contextpath | 字符串 | 可选 | 缺省为空串 | 服务<br>治理 | &nbsp;|
 
