@@ -78,7 +78,7 @@ wrapper.appendChild(el);
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 服务负责人 |
 | document | document | 字符串 | 可选 | | 服务<br>治理 | 服务文档URL |
 | weight | weight | 整数 | 可选 | | 性能<br>调优 | 服务权重 |
-| executes | executes | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者最大可并行执行请求数 |
+| executes | executes | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者最大并行执行请求数 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 服务消费者最大并发调用数 |
 | proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 动态代理方式，可选：jdk、javassist |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
