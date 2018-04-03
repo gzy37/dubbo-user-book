@@ -25,6 +25,17 @@ table tbody tr:nth-child(2n) {
 table td:nth-child(1) {
   white-space: nowrap;
 }
+table td:nth-child(3) {
+  white-space: nowrap;
+}
+table td:nth-child(4) {
+  white-space: nowrap;
+}
+table td:nth-child(6) {
+  white-space: nowrap;
+}
+
+
 table tr:hover {
   background: #efefef;
 }
@@ -46,7 +57,7 @@ table tr:hover {
 
 监控中心配置。对应的配置类： `com.alibaba.dubbo.config.MonitorConfig`
 
-| 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 | 兼容性 |
-| --- | --- | ---- | --- | --- | --- | --- | --- |
-| protocol | protocol | string | 可选 | dubbo | 服务治理 | 监控中心协议，如果为protocol="registry"，表示从注册中心发现监控中心地址，否则直连监控中心。 | 2.0.9以上 |
-| address | &lt;url&gt; | string | 可选 | N/A | 服务治理 | 直连监控中心服务器地址 | 1.0.16以上 |
+| 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
+| --- | --- | ---- | --- | --- | --- | --- |
+| protocol | protocol | 字符串 | 可选 | dubbo | 服务治理 | 监控中心协议，如果为"registry"，表示从注册中心发现监控中心地址，否则直连监控中心。 |
+| address | &lt;url&gt; | 字符串 | 可选 | N/A | 服务治理 | 直连监控中心服务器地址 |
