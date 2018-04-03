@@ -1,5 +1,4 @@
-<
-style>
+<style>
 table {
 width: 100%;
 max-width: 65em;
@@ -26,6 +25,16 @@ background: rgba(158,188,226,0.12);
 table td:nth-child(1) {
 white-space: nowrap;
 }
+table td:nth-child(3) {
+white-space: nowrap;
+}
+table td:nth-child(4) {
+white-space: nowrap;
+}
+table td:nth-child(6) {
+white-space: nowrap;
+}
+
 table tr:hover {
 background: #efefef;
 }
@@ -53,7 +62,7 @@ wrapper.appendChild(el);
 | name | &lt;protocol&gt; | 字符串 | <b>必填</b> | dubbo | 性能<br>调优 | 协议名称 |
 | port | &lt;port&gt; | 整数 | 可选 | dubbo协议缺省端口为20880，rmi协议缺省端口为1099，http和hessian协议缺省端口为80；如果配置为<b>-1</b> 或者 <b>没有</b>配置port，则会分配一个没有被占用的端口。Dubbo 2.4.0+，分配的端口在协议缺省端口的基础上增长，确保端口段可控。 | 服务<br>发现 | 服务端口 |
 | host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | &#45;服务主机名，多网卡选择或指定VIP及域名时使用，为空则自动查找本机IP，&#45;建议不要配置，让Dubbo自动获取本机IP |
-| threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed/cached |
+| threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed、cached |
 | threads | threads | 整数 | 可选 | 100 | 性能<br>调优 | 服务线程池大小(固定大小) |
 | iothreads | threads | 整数 | 可选 | cpu个数+1 | 性能<br>调优 | io线程池大小(固定大小) |
 | accepts | accepts | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供方最大可接受连接数 |
