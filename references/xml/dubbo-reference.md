@@ -65,13 +65,13 @@ wrapper.appendChild(el);
 | url | url | 字符串 | 可选 | | 服务<br>治理 | 点对点直连服务提供者地址，将绕过注册中心 |
 | stub | stub | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口客户端本地代理类名 |
 | mock | mock | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口调用失败Mock实现类名|
-| timeout | timeout | 整数 | 可选 | consumer的timeout | 性能<br>调优 | 服务方法调用超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | consumer的retries | 性能<br>调优 | 远程服务调用重试次数(不含第一次调用)，不需要重试设为0 |
+| timeout | timeout | 整数 | 可选 | consumer的timeout | 性能<br>调优 | 超时时间(毫秒) |
+| retries | retries | 整数 | 可选 | consumer的retries | 性能<br>调优 | 重试次数(不含第一次调用)，不需要重试设为0 |
 | connections | connections | 整数 | 可选 | consumer的connections | 性能<br>调优 | 对每个提供者的最大连接数 |
 | loadbalance | loadbalance | 字符串 | 可选 | consumer的loadbalance | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | consumer的async | 性能<br>调优 | 是否异步执行 |
-| generic | generic | 布尔 | 可选 | consumer的generic | 服务<br>治理 | 是否缺省泛化接口，如果为泛化接口，将返回 |
-| check | check | 布尔 | 可选 | consumer的check | 服务<br>治理 | 启动时检查提供者是否存在，true报错，false忽略 |
+| generic | generic | 布尔 | 可选 | consumer的generic | 服务<br>治理 | 是否缺省泛化接口 |
+| check | check | 布尔 | 可选 | consumer的check | 服务<br>治理 | 启动时检查提供者是否存在 |
 | cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、 threadlocal、 jcache等 |
 | validation | validation | 布尔 | 可选 | | 服务<br>治理 | 是否启用JSR303标准注解验证，如果启用，将对方法参数上的注解进行校验 |
 | proxy | proxy | 布尔 | 可选 | javassist | 性能<br>调优 | 选择动态代理实现策略，可选：javassist、 jdk |
@@ -81,7 +81,7 @@ wrapper.appendChild(el);
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者最大并发调用数 |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务调用者所在的分层。如：biz、dao。 |
-| init | init | 布尔 | 可选 | false | 性能<br>调优 | 是否在afterPropertiesSet()时饥饿初始化引用，否则等到有人注入或引用该实例时再初始化。 |
+| init | init | 布尔 | 可选 | false | 性能<br>调优 | 是否初始化。 |
 | protocol | protocol | 字符串 | 可选 | | 服务<br>治理 | 只调用指定协议的服务提供方，其它协议忽略。 |
 | filter | reference.<br>filter | 字符串 | 可选 | default | 性能<br>调优 | 服务消费方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | invoker.<br>listener | 字符串 | 可选 | default | 性能<br>调优 | 服务消费方引用服务监听器名称，多个名称用逗号分隔 |
