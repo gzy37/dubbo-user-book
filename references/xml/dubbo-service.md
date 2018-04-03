@@ -27,7 +27,9 @@ white-space: nowrap;
 table td:nth-child(3) {
 white-space: nowrap;
 }
-
+table td:nth-child(4) {
+white-space: nowrap;
+}
 table td:nth-child(6) {
 white-space: nowrap;
 }
