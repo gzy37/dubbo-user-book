@@ -59,7 +59,7 @@ wrapper.appendChild(el);
 | --- | --- | ---- | --- | --- | --- | --- |
 | id | | 字符串 | 可选 | dubbo | 配置<br>关联 | 协议BeanId |
 | protocol | &lt;protocol&gt; | 字符串 | 可选 | dubbo | 性能<br>调优 | 协议名称 |
-| host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | 服务主机名，多网卡选择或指定VIP及域名时使用，为空则自动查找本机IP，建议不要配置，让Dubbo自动获取本机IP |
+| host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | 服务主机名，多网卡选择或指定VIP及域名时使用，为空则自动查找本机IP |
 | threads | threads | 整数 | 可选 | 100 | 性能<br>调优 | 服务线程池大小(固定大小) |
 | payload | payload | 整数 | 可选 | 88388608 | 性能<br>调优 | 请求及响应数据包大小限制，单位：字节 |
 | path | &lt;path&gt; | 字符串 | 可选 | | 服务<br>发现 | 提供者上下文路径，为服务path的前缀 |
