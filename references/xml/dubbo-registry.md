@@ -1,5 +1,4 @@
-<
-style>
+<style>
 table {
 width: 100%;
 max-width: 65em;
@@ -61,7 +60,7 @@ wrapper.appendChild(el);
 | file | registry.file | 字符串 | 可选 | | 服务<br>治理 | 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储 |
 | wait | registry.wait | 整数 | 可选 | 0 | 性能<br>调优 | 停止时等待通知完成时间(毫秒) |
 | check | check | 布尔 | 可选 | true | 服务<br>治理 | 注册中心不存在时，是否报错 |
-| register | register | 布尔 | 可选 | true | 服务<br>治理 | 是否向此注册中心注册服务，如果设为false，将只订阅，不注册 |
-| subscribe | subscribe | 布尔 | 可选 | true | 服务<br>治理 | 是否向此注册中心订阅服务，如果设为false，将只注册，不订阅 |
+| register | register | 布尔 | 可选 | true | 服务<br>治理 | 是否向注册中心注册服务，false表示只订阅不注册 |
+| subscribe | subscribe | 布尔 | 可选 | true | 服务<br>治理 | 是否向注册中心订阅服务，false表示只注册不订阅 |
 | dynamic | dynamic | 布尔 | 可选 | true | 服务<br>治理 | 服务是否动态注册，如果设为false，注册后将显示后disable状态，需人工启用，并且服务提供者停止时，也不会自动取消册，需人工禁用。 |
 
