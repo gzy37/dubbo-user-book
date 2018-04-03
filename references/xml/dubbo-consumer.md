@@ -97,12 +97,12 @@ wrapper.appendChild(el);
 | generic | generic | 布尔 | 可选 | false | 服务<br>治理 | 是否缺省泛化接口，如果为泛化接口，将返回GenericService |
 | check | check | 布尔 | 可选 | true | 服务<br>治理 | 启动时检查提供者是否存在，true报错，false忽略 |
 | proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk/javassist |
-| owner | owner | 字符串 | 可选 | | 服务<br>治理 | 调用服务负责人，用于服务<br>治理，请填写负责人公司邮箱前缀 |
+| owner | owner | 字符串 | 可选 | | 服务<br>治理 | 调用服务负责人，用于服务治理 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者每服务每方法最大并发调用数 |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
 | filter | filter | 字符串 | 可选 | | 性能<br>调优 | 服务消费方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | listener | 字符串 | 可选 | | 性能<br>调优 | 服务消费方引用服务监听器名称，多个名称用逗号分隔 |
-| registry | | 字符串 | 可选 | 缺省向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
+| registry | | 字符串 | 可选 | 向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务调用者所在的分层。如：biz、dao。 |
 | init | init | 布尔 | 可选 | false | 性能<br>调优 | 是否在afterPropertiesSet()时饥饿初始化引用，否则等到有人注入或引用该实例时再初始化。 |
 | cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、 threadlocal、jcache等 |
