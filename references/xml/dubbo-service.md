@@ -65,7 +65,7 @@ wrapper.appendChild(el);
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 服务调用超时时间(毫秒) |
 | retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 服务调用重试次数(不含第一次调用，不需要重试设为0) |
 | connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 最大连接数 |
-| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive |
+| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
 | stub | stub | 类<br>布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省代理类名|
 | mock | mock | 类<br>布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省Mock类名 |
