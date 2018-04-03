@@ -65,13 +65,13 @@ wrapper.appendChild(el);
 | url | url | 字符串 | 可选 | | 服务<br>治理 | 点对点直连服务提供者地址，将绕过注册中心 |
 | stub | stub | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口客户端本地代理类名 |
 | mock | mock | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口调用失败Mock实现类名|
-| timeout | timeout | 整数 | 可选 | 使用consumer的timeout | 性能<br>调优 | 服务方法调用超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | 使用consumer的retries | 性能<br>调优 | 远程服务调用重试次数(不含第一次调用)，不需要重试设为0 |
-| connections | connections | 整数 | 可选 | 使用consumer的connections | 性能<br>调优 | 对每个提供者的最大连接数 |
-| loadbalance | loadbalance | 字符串 | 可选 | 使用consumer的loadbalance | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
-| async | async | 布尔 | 可选 | 使用consumer的async | 性能<br>调优 | 是否异步执行 |
-| generic | generic | 布尔 | 可选 | 使用consumer的generic | 服务<br>治理 | 是否缺省泛化接口，如果为泛化接口，将返回 |
-| check | check | 布尔 | 可选 | 使用consumer的check | 服务<br>治理 | 启动时检查提供者是否存在，true报错，false忽略 |
+| timeout | timeout | 整数 | 可选 | consumer的timeout | 性能<br>调优 | 服务方法调用超时时间(毫秒) |
+| retries | retries | 整数 | 可选 | consumer的retries | 性能<br>调优 | 远程服务调用重试次数(不含第一次调用)，不需要重试设为0 |
+| connections | connections | 整数 | 可选 | consumer的connections | 性能<br>调优 | 对每个提供者的最大连接数 |
+| loadbalance | loadbalance | 字符串 | 可选 | consumer的loadbalance | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
+| async | async | 布尔 | 可选 | consumer的async | 性能<br>调优 | 是否异步执行 |
+| generic | generic | 布尔 | 可选 | consumer的generic | 服务<br>治理 | 是否缺省泛化接口，如果为泛化接口，将返回 |
+| check | check | 布尔 | 可选 | consumer的check | 服务<br>治理 | 启动时检查提供者是否存在，true报错，false忽略 |
 | cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、 threadlocal、 jcache等 |
 | validation | validation | 布尔 | 可选 | | 服务<br>治理 | 是否启用JSR303标准注解验证，如果启用，将对方法参数上的注解进行校验 |
 | proxy | proxy | 布尔 | 可选 | javassist | 性能<br>调优 | 选择动态代理实现策略，可选：javassist、 jdk |
