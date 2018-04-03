@@ -60,7 +60,7 @@ table tr:hover {
     <dubbo:argument index="0" callback="true" />
 </dubbo:method>
 ```
-| 属性 | 对应URL参数 | 类型 | 是否必填 | 缺省值 | 作用 | 描述 |
+| 属性 | 对应<br>URL参数 | 类型 | 是否必填 | 缺省值 | 作用 | 描述 |
 | --- | --- | ---- | --- | --- | --- | --- | --- |
 | index | | 整数 | <b>必填</b> | | 标识 | 方法名 |
 | type | | 字符串 | 与index二选一 | | 标识 | 通过参数类型查找参数的index |
