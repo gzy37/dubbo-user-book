@@ -80,7 +80,7 @@ table tr:hover {
 | accesslog | accesslog | string<br>boolean | 可选 | false | 服务<br>治理 | 设为true，将向logger中输出访问日志，也可填写访问日志文件路径，直接把访问日志输出到指定文件 |
 | owner | owner | string | 可选 | | 服务<br>治理 | 服务负责人，用于服务治理，请填写负责人公司邮箱前缀 |
 | document | document | string | 可选 | | 服务<br>治理 | 服务文档URL |
-| weight | weight | int | 可选 | | 性能<br>调优 | 服务权重 | 2.0.5以上版本 |
+| weight | weight | int | 可选 | | 性能<br>调优 | 服务权重 |
 | executes | executes | int | 可选 | 0 | 性能<br>调优 | 服务提供者每服务每方法最大可并行执行请求数 |
 | actives | actives | int | 可选 | 0 | 性能<br>调优 | 每服务消费者每服务每方法最大并发调用数 |
 | proxy | proxy | string | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk/javassist |
