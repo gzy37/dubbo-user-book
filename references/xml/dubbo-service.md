@@ -24,6 +24,10 @@ background: rgba(158,188,226,0.12);
 table td:nth-child(1) {
 white-space: nowrap;
 }
+table td:nth-child(3) {
+white-space: nowrap;
+}
+
 table td:nth-child(6) {
 white-space: nowrap;
 }
