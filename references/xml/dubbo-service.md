@@ -60,13 +60,10 @@ wrapper.appendChild(el);
 | ref | | 对象 | <b>必填</b> | | 服务<br>发现 | 服务对象实现引用 |
 | version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议使用两位数字版本 |
 | group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，当一个接口有多个实现，可以用分组区分 |
-| path | &lt;path&gt; | 字符串 | 可选 | 缺省为接口名 | 服务<br>发现 | 服务路径 |
+| path | &lt;path&gt; | 字符串 | 可选 | 接口名 | 服务<br>发现 | 服务路径 |
 | delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 延迟注册服务时间(毫秒) ，设为-1时，表示延迟到Spring容器初始化完成时暴露服务 |
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 远程服务调用超时时间(毫秒) |
 | retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
-
-| 属性 | 对应URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
-| --- | --- | ---- | --- | --- | --- | --- |
 | connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数 |
 | loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive，分别表示：随机，轮循，最少活跃调用 |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否缺省异步执行，不可靠异步，只是忽略返回值，不阻塞执行线程 |
