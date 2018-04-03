@@ -63,7 +63,7 @@ wrapper.appendChild(el);
 | path | &lt;path&gt; | 字符串 | 可选 | 接口名 | 服务<br>发现 | 服务路径 |
 | delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 服务延迟注册时间(毫秒) ，设为-1表示Spring容器初始化完成暴露服务 |
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 服务调用超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 服务调用重试次数(不含第一次调用，不需要重试设为0) |
+| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 服务调用重试次数(不含第一次调用) ，不需要重试设为0|
 | connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 最大连接数 |
 | loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
