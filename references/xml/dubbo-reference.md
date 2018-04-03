@@ -61,10 +61,10 @@ wrapper.appendChild(el);
 | id | | 字符串 | <b>必填</b> | | 配置<br>关联 | 服务引用BeanId |
 | interface | | 类 | <b>必填</b> | | 服务<br>发现 | 服务接口名 |
 | version | version | 字符串 | 可选 | | 服务<br>发现 | 服务版本，与服务提供者的版本一致 |
-| group | group | 字符串 | 可选 | | 服务<br>发现 | 服务<br>分组，当一个接口有多个实现，可以用分组区分，必须和服务提供方一致 |
+| group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，必须和服务提供方一致 |
 | url | url | 字符串 | 可选 | | 服务<br>治理 | 点对点直连服务提供者地址，将绕过注册中心 |
-| stub | stub | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口客户端本地代理类名，用于在客户端执行本地逻辑，如本地缓存等，该本地代理类的构造函数必须允许传入远程代理对象 |
-| mock | mock | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口调用失败Mock实现类名，该Mock类必须有一个无参构造函数，与Local的区别在于，Local总是被执行，而Mock只在出现非业务异常(比如超时，网络异常等)时执行，Local在远程调用之前执行，Mock在远程调用后执行。 |
+| stub | stub | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口客户端本地代理类名 |
+| mock | mock | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口调用失败Mock实现类名|
 | timeout | timeout | 整数 | 可选 | 使用consumer的timeout | 性能<br>调优 | 服务方法调用超时时间(毫秒) |
 | retries | retries | 整数 | 可选 | 使用consumer的retries | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
 | connections | connections | 整数 | 可选 | 使用consumer的connections | 性能<br>调优 | 对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数 |
