@@ -77,7 +77,7 @@ wrapper.appendChild(el);
 | delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 延迟注册服务时间(毫秒)，-1表示Spring容器初始化完成暴露服务 |
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 超时时间(毫秒) |
 | retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 重试次数(不包括第一次调用)，0表示不需要重试 |
-| connections | connections | 整数 | 可选 | 0 | 性能<br>调优 | 对每个提供者的最大连接数，rmi、http、hessian等短连接协议表示限制连接数，dubbo等长连接协表示建立的长连接个数 |
+| connections | connections | 整数 | 可选 | 0 | 性能<br>调优 | 对每个提供者的最大连接数 |
 | loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
 | stub | stub | 布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省代理类名 |
@@ -97,7 +97,7 @@ wrapper.appendChild(el);
 | queues | queues | 整数 | 可选 | 0 | 性能<br>调优 | 线程池队列大小，当线程池满时，排队等待执行的队列大小，建议不要设置，当线程池满时应立即失败，重试其它服务提供机器。 |
 | charset | charset | 字符串 | 可选 | UTF-8 | 性能<br>调优 | 序列化编码 |
 | buffer | buffer | 整数 | 可选 | 8192 | 性能<br>调优 | 网络读写缓冲区大小 |
-| iothreads | iothreads | 整数 | 可选 | CPU + 1 | 性能<br>调优 | IO线程池，接收网络读写中断，以及序列化和反序列化，不处理业务，业务线程池参见threads配置，此线程池和CPU相关，不建议配置。 |
+| iothreads | iothreads | 整数 | 可选 | CPU + 1 | 性能<br>调优 | IO线程池，接收网络读写中断，以及序列化和反序列化，不处理业务|
 | telnet | telnet | 字符串 | 可选 | | 服务<br>治理 | 所支持的telnet命令，多个命令用逗号分隔 |
 | contextpath | contextpath | 字符串 | 可选 | 缺省为空串 | 服务<br>治理 | |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务提供者所在的分层。如：biz、dao。 |
