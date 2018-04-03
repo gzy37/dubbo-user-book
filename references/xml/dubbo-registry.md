@@ -60,15 +60,15 @@ wrapper.appendChild(el);
 
 | 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
 | --- | --- | ---- | --- | --- | --- | --- |
-| id | | 字符串 | 可选 | | 配置<br>关联 | 注册中心引用BeanId |
-| address | &lt;host:port&gt; | 字符串 | <b>必填</b> | | 服务<br>发现 | 注册中心服务器地址，如果地址没有端口缺省为9090，同一集群内的多个地址用逗号分隔，如：ip:port,ip:port，不同集群的注册中心，请配置多个registry标签 |
+| id | | 字符串 | 可选 | | 配置<br>关联 | 注册中心BeanId |
+| address | &lt;host:port&gt; | 字符串 | <b>必填</b> | | 服务<br>发现 | 注册中心服务器地址，端口缺省为9090，同一集群内的多个地址用逗号分隔，如：ip:port,ip:port，不同集群的注册中心，请配置多个registry标签 |
 | protocol | &lt;protocol&gt; | 字符串 | 可选 | dubbo | 服务<br>发现 | 注同中心地址协议，支持dubbo, http, local三种协议，分别表示，dubbo地址，http地址，本地注册中心 |
-| port | &lt;port&gt; | 整数 | 可选 | 9090 | 服务<br>发现 | 注册中心缺省端口，当address没有带端口时使用此端口做为缺省值 |
+| port | &lt;port&gt; | 整数 | 可选 | 9090 | 服务<br>发现 | 注册中心缺省端口 |
 | username | &lt;username&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心用户名，如果注册中心不需要验证可不填 |
 | password | &lt;password&gt; | 字符串 | 可选 | | 服务<br>治理 | 登录注册中心密码，如果注册中心不需要验证可不填 |
 | transport | registry.<br>transporter | 字符串 | 可选 | netty | 性能<br>调优 | 网络传输方式，可选mina、netty |
 | timeout | registry.<br>timeout | 整数 | 可选 | 5000 | 性能<br>调优 | 注册中心请求超时时间(毫秒) |
-| session | registry.<br>session | 整数 | 可选 | 60000 | 性能<br>调优 | 注册中心会话超时时间(毫秒)，用于检测提供者非正常断线后的脏数据，比如用心跳检测的实现，此时间就是心跳间隔，不同注册中心实现不一样。 |
+| session | registry.<br>session | 整数 | 可选 | 60000 | 性能<br>调优 | 注册中心会话超时时间(毫秒) |
 | file | registry.<br>file | 字符串 | 可选 | | 服务<br>治理 | 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储 |
 | wait | registry.<br>wait | 整数 | 可选 | 0 | 性能<br>调优 | 停止时等待通知完成时间(毫秒) |
 | check | check | 布尔 | 可选 | true | 服务<br>治理 | 注册中心不存在时，是否报错 |
