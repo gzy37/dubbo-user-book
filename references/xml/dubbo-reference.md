@@ -1,5 +1,4 @@
-<
-style>
+<style>
 table {
 width: 100%;
 max-width: 65em;
