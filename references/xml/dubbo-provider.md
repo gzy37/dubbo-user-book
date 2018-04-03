@@ -71,8 +71,8 @@ wrapper.appendChild(el);
 | filter | filter | 字符串 | 可选 | | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | listener | 字符串 | 可选 | | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
 | threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed、cached |
-| accepts | accepts | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者最大可接受连接数 |
-| version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议使用两位数字版本 |
+| accepts | accepts | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者最大接受连接数 |
+| version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本 |
 | group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，当一个接口有多个实现，可以用分组区分 |
 | delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 延迟注册服务时间(毫秒)，-1表示Spring容器初始化完成暴露服务 |
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 超时时间(毫秒) |
