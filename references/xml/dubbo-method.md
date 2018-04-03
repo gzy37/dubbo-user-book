@@ -58,15 +58,15 @@ wrapper.appendChild(el);
 | 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
 | --- | --- | ---- | --- | --- | --- | --- |
 | name | | 字符串 | <b>必填</b> | | 标识 | 方法名 |
-| timeout | timeout | 整数 | 可选 | | 性能<br>调优 | 方法调用超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
-| loadbalance | loadbalance | 字符串 | 可选 | | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive |
+| timeout | timeout | 整数 | 可选 | | 性能<br>调优 | 超时时间(毫秒) |
+| retries | retries | 整数 | 可选 | | 性能<br>调优 | 服务调用重试次数(不包括第一次调用)，0为不需要重试 |
+| loadbalance | loadbalance | 字符串 | 可选 | | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
 | async | async | 布尔 | 可选 | | 性能<br>调优 | 是否异步执行 |
-| sent | sent | 布尔 | 可选 | true | 性能<br>调优 | 异步调用时，标记sent=true时，表示网络已发出数据 |
+| sent | sent | 布尔 | 可选 | true | 性能<br>调优 | 异步调用时，true表示网络已发出数据 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者最大并发调用限制 |
 | executes | executes | 整数 | 可选 | 0 | 性能<br>调优 | 每服务每方法最大使用线程数限制，此属性只在&lt;dubbo:method&gt;作为&lt;dubbo:service&gt;子标签时有效 |
 | deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 服务方法是否过时，此属性只在&lt;dubbo:method&gt;作为&lt;dubbo:service&gt;子标签时有效 |
-| sticky | sticky | 布尔 | 可选 | false | 服务<br>治理 | 设置true 该接口上的所有方法使用同一个provider.如果需要更复杂的规则，请使用用路由 |
+| sticky | sticky | 布尔 | 可选 | false | 服务<br>治理 | true表示该接口上所有方法使用同一个provider。如果需要更复杂的规则，请使用路由 |
 | return | return | 布尔 | 可选 | true | 性能<br>调优 | 方法调用是否需要返回值,async设置为true时才生效，如果设置为true，则返回future，或回调onreturn等方法，如果设置为false，则请求发送成功后直接返回Null |
 | oninvoke | attribute属性，不在URL中体现 | 字符串 | 可选 | | 性能<br>调优 | 方法执行前拦截 |
 | onreturn | attribute属性，不在URL中体现 | 字符串 | 可选 | | 性能<br>调优 | 方法执行返回后拦截 |

@@ -89,10 +89,10 @@ wrapper.appendChild(el);
 
 | 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
 | --- | --- | ---- | --- | --- | --- | --- |
-| timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 远程服务调用超时时间(毫秒) |
-| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 远程服务调用重试次数，不包括第一次调用，不需要重试请设为0 |
-| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选值：random、roundrobin、leastactive |
-| async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否缺省异步执行，不可靠异步，只是忽略返回值，不阻塞执行线程 |
+| timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 超时时间(毫秒) |
+| retries | retries | 整数 | 可选 | 2 | 性能<br>调优 | 重试次数(不包括第一次调用)，0表示不需要重试 |
+| loadbalance | loadbalance | 字符串 | 可选 | random | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
+| async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否缺省异步执行 |
 | connections | connections | 整数 | 可选 | 100 | 性能<br>调优 | 每个服务对每个提供者的最大连接数，rmi、http、hessian等短连接协议支持此配置，dubbo协议长连接不支持此配置 |
 | generic | generic | 布尔 | 可选 | false | 服务<br>治理 | 是否缺省泛化接口，如果为泛化接口，将返回GenericService |
 | check | check | 布尔 | 可选 | true | 服务<br>治理 | 启动时检查提供者是否存在，true报错，false忽略 |
@@ -104,6 +104,6 @@ wrapper.appendChild(el);
 | listener | listener | 字符串 | 可选 | | 性能<br>调优 | 服务消费方引用服务监听器名称，多个名称用逗号分隔 |
 | registry | | 字符串 | 可选 | 向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务调用者所在的分层。如：biz、dao。 |
-| init | init | 布尔 | 可选 | false | 性能<br>调优 | 是否在afterPropertiesSet()时饥饿初始化引用，否则等到有人注入或引用该实例时再初始化。 |
+| init | init | 布尔 | 可选 | false | 性能<br>调优 | 是否在afterPropertiesSet初始化引用，否则等到有人注入或引用该实例时再初始化。 |
 | cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、 threadlocal、jcache等 |
 | validation | validation | 布尔 | 可选 | | 服务<br>治理 | 是否启用JSR303标准注解验证，如果启用，将对方法参数上的注解进行校验 |
