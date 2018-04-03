@@ -75,8 +75,8 @@ wrapper.appendChild(el);
 | cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、 threadlocal、 jcache等 |
 | validation | validation | 布尔 | 可选 | | 服务<br>治理 | 是否启用JSR303标准注解验证，如果启用，将对方法参数上的注解进行校验 |
 | proxy | proxy | 布尔 | 可选 | javassist | 性能<br>调优 | 选择动态代理实现策略，可选：javassist、 jdk |
-| client | client | 字符串 | 可选 | | 性能<br>调优 | 客户端传输类型设置，如Dubbo协议的netty或mina。 |
-| registry | | 字符串 | 可选 | 将从所有注册中心获服务列表后合并结果 | 配置<br>关联 | 从指定注册中心注册获取服务列表，在多个注册中心时使用，值为&lt;dubbo:registry&gt;的id属性，多个注册中心ID用逗号分隔 |
+| client | client | 字符串 | 可选 | | 性能<br>调优 | 客户端传输类型，如Dubbo协议的netty或mina。 |
+| registry | | 字符串 | 可选 | 将从所有注册中心获服务列表后合并结果 | 配置<br>关联 | 从指定注册中心注册获取服务列表，在多个注册中心时使用，值为registry的id属性，多个注册中心ID用逗号分隔 |
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 调用服务负责人 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者最大并发调用数 |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
