@@ -60,7 +60,7 @@ wrapper.appendChild(el);
 
 | 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
 | --- | --- | ---- | --- | --- | --- | --- |
-| id | | 字符串 | 可选 | | 配置关联 | 注册中心引用BeanId，可以在&lt;dubbo:service registry=""&gt;或&lt;dubbo:reference registry=""&gt;中引用此ID |
+| id | | 字符串 | 可选 | | 配置<br>关联 | 注册中心引用BeanId，可以在&lt;dubbo:service registry=""&gt;或&lt;dubbo:reference registry=""&gt;中引用此ID |
 | address | &lt;host:port&gt; | 字符串 | <b>必填</b> | | 服务<br>发现 | 注册中心服务器地址，如果地址没有端口缺省为9090，同一集群内的多个地址用逗号分隔，如：ip:port,ip:port，不同集群的注册中心，请配置多个&lt;dubbo:registry&gt;标签 |
 | protocol | &lt;protocol&gt; | 字符串 | 可选 | dubbo | 服务<br>发现 | 注同中心地址协议，支持dubbo, http, local三种协议，分别表示，dubbo地址，http地址，本地注册中心 |
 | port | &lt;port&gt; | 整数 | 可选 | 9090 | 服务<br>发现 | 注册中心缺省端口，当address没有带端口时使用此端口做为缺省值 |
