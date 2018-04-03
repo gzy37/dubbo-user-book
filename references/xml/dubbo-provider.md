@@ -57,7 +57,7 @@ wrapper.appendChild(el);
 
 | 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
 | --- | --- | ---- | --- | --- | --- | --- |
-| id | | 字符串 | 可选 | dubbo | 配置<br>关联 | 协议BeanId，可以在&lt;dubbo:service proivder=""&gt;引用此ID |
+| id | | 字符串 | 可选 | dubbo | 配置<br>关联 | 协议BeanId |
 | protocol | &lt;protocol&gt; | 字符串 | 可选 | dubbo | 性能<br>调优 | 协议名称 |
 | host | &lt;host&gt; | 字符串 | 可选 | 自动查找本机IP | 服务<br>发现 | 服务主机名，多网卡选择或指定VIP及域名时使用，为空则自动查找本机IP，建议不要配置，让Dubbo自动获取本机IP |
 | threads | threads | 整数 | 可选 | 100 | 性能<br>调优 | 服务线程池大小(固定大小) |
@@ -72,7 +72,7 @@ wrapper.appendChild(el);
 | listener | listener | 字符串 | 可选 | | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
 | threadpool | threadpool | 字符串 | 可选 | fixed | 性能<br>调优 | 线程池类型，可选：fixed、cached |
 | accepts | accepts | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者最大可接受连接数 |
-| version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议使用两位数字版本，如：1.0，通常在接口不兼容时版本号才需要升级 |
+| version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议使用两位数字版本 |
 | group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，当一个接口有多个实现，可以用分组区分 |
 | delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 延迟注册服务时间(毫秒)，-1表示Spring容器初始化完成暴露服务 |
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 超时时间(毫秒) |
