@@ -117,20 +117,24 @@ Zookeeper 集群配置：
 
 ```xml
 
-<dubbo:registry address="zookeeper://10.20.153.10:2181?backup=10.20.153.11:2181,10.20.153.12:2181" />
+<dubbo:registry 
+    address="zookeeper://10.20.153.10:2181?backup=10.20.153.11:2181,10.20.153.12:2181" />
 ```
 
 或：
 
 ```xml
-<dubbo:registry protocol="zookeeper" address="10.20.153.10:2181,10.20.153.11:2181,10.20.153.12:2181" />
+<dubbo:registry protocol="zookeeper" 
+    address="10.20.153.10:2181,10.20.153.11:2181,10.20.153.12:2181" />
 ```
 
 同一 Zookeeper，分成多组注册中心:
 
 ```xml
-<dubbo:registry id="chinaRegistry" protocol="zookeeper" address="10.20.153.10:2181" group="china" />
-<dubbo:registry id="intlRegistry" protocol="zookeeper" address="10.20.153.10:2181" group="intl" />
+<dubbo:registry id="chinaRegistry" protocol="zookeeper" 
+    address="10.20.153.10:2181" group="china" />
+<dubbo:registry id="intlRegistry" protocol="zookeeper" 
+    address="10.20.153.10:2181" group="intl" />
 ```
 
 ## zookeeper 安装

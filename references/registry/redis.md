@@ -37,7 +37,8 @@
 或
 
 ```xml
-<dubbo:registry address="redis://10.20.153.10:6379?backup=10.20.153.11:6379,10.20.153.12:6379" />
+<dubbo:registry 
+    address="redis://10.20.153.10:6379?backup=10.20.153.11:6379,10.20.153.12:6379" />
 ```
 
 或
@@ -49,7 +50,8 @@
 或
 
 ```xml
-<dubbo:registry protocol="redis" address="10.20.153.10:6379,10.20.153.11:6379,10.20.153.12:6379" />
+<dubbo:registry protocol="redis" 
+    address="10.20.153.10:6379,10.20.153.11:6379,10.20.153.12:6379" />
 ```
 
 ## 选项
