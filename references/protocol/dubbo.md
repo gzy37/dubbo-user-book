@@ -119,8 +119,8 @@ Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据
 
 ```xml
 <dubbo:protocol name=“dubbo” port=“9090” server=“netty” client=“netty” codec=“dubbo” 
-    serialization=“hessian2” charset=“UTF-8” threadpool=“fixed” threads=“100” queues=“0” 
-    iothreads=“9” buffer=“8192” accepts=“1000” payload=“8388608” />
+    serialization=“hessian2” charset=“UTF-8” threadpool=“fixed” threads=“100” 
+    queues=“0” iothreads=“9” buffer=“8192” accepts=“1000” payload=“8388608” />
 ```
 
 多连接配置：
