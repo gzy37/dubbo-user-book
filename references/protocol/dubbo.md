@@ -1,3 +1,48 @@
+<style>
+table {
+  width: 100%;
+  max-width: 65em;
+  border: 1px solid #dedede;
+  margin: 15px auto;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+table th,
+table td {
+  height: 35px;
+  border: 1px solid #dedede;
+  padding: 0 10px;
+}
+table th {
+  font-weight: bold;
+  text-align: center !important;
+  background: rgba(158,188,226,0.2);
+  white-space: nowrap;
+}
+table tbody tr:nth-child(2n) {
+  background: rgba(158,188,226,0.12);
+}
+table td:nth-child(1) {
+  white-space: nowrap;
+}
+table tr:hover {
+  background: #efefef;
+}
+.table-area {
+  overflow: auto;
+}
+</style>
+
+<script type="text/javascript">
+[].slice.call(document.querySelectorAll('table')).forEach(function(el){
+    var wrapper = document.createElement('div');
+    wrapper.className = 'table-area';
+    el.parentNode.insertBefore(wrapper, el);
+    el.parentNode.removeChild(el);
+    wrapper.appendChild(el);
+})
+</script>
+
 # dubbo://
 
 Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据量大并发的服务调用，以及服务消费者机器数远大于服务提供者机器数的情况。
