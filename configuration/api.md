@@ -18,6 +18,7 @@ XxxService xxxService = new XxxServiceImpl();
 // 当前应用配置
 ApplicationConfig application = new ApplicationConfig();
 application.setName("xxx"); 
+
 // 连接注册中心配置
 RegistryConfig registry = new RegistryConfig();
 registry.setAddress("10.20.130.230:9090");
@@ -63,7 +64,8 @@ registry.setPassword("bbb");
 // 注意：ReferenceConfig为重对象，内部封装了与注册中心的连接，以及与服务提供方的连接
  
 // 引用远程服务
-ReferenceConfig<XxxService> reference = new ReferenceConfig<XxxService>(); // 此实例很重，封装了与注册中心的连接以及与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏
+// 此实例很重，封装了与注册中心的连接以及与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏
+ReferenceConfig<XxxService> reference = new ReferenceConfig<XxxService>(); 
 reference.setApplication(application);
 reference.setRegistry(registry); // 多个注册中心可以用setRegistries()
 reference.setInterface(XxxService.class);
@@ -91,7 +93,8 @@ method.setRetries(0);
 methods.add(method);
  
 // 引用远程服务
-ReferenceConfig<XxxService> reference = new ReferenceConfig<XxxService>(); // 此实例很重，封装了与注册中心的连接以及与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏
+// 此实例很重，封装了与注册中心的连接以及与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏
+ReferenceConfig<XxxService> reference = new ReferenceConfig<XxxService>(); 
 ...
 reference.setMethods(methods); // 设置方法级配置
  
@@ -103,8 +106,8 @@ reference.setMethods(methods); // 设置方法级配置
 ```java
 
 ...
- 
-ReferenceConfig<XxxService> reference = new ReferenceConfig<XxxService>(); // 此实例很重，封装了与注册中心的连接以及与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏
+// 此实例很重，封装了与注册中心的连接以及与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏 
+ReferenceConfig<XxxService> reference = new ReferenceConfig<XxxService>(); 
 // 如果点对点直连，可以用reference.setUrl()指定目标地址，设置url后将绕过注册中心，
 // 其中，协议对应provider.setProtocol()的值，端口对应provider.setPort()的值，
 // 路径对应service.setPath()的值，如果未设置path，缺省path为接口名
