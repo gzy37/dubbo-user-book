@@ -12,8 +12,10 @@
 ## 引用
 
 ```xml
-<dubbo:reference id="feedbackIndexService" group="feedback" interface="com.xxx.IndexService" />
-<dubbo:reference id="memberIndexService" group="member" interface="com.xxx.IndexService" />
+<dubbo:reference id="feedbackIndexService" group="feedback" 
+    interface="com.xxx.IndexService" />
+<dubbo:reference id="memberIndexService" group="member" 
+    interface="com.xxx.IndexService" />
 ```
 
 任意组 [^1]：

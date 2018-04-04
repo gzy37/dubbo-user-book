@@ -11,13 +11,17 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-    xsi:schemaLocation="http://www.springframework.org/schema/beanshttp://www.springframework.org/schema/beans/spring-beans.xsdhttp://code.alibabatech.com/schema/dubbohttp://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="world"  />
     <!-- 多注册中心配置 -->
     <dubbo:registry id="hangzhouRegistry" address="10.20.141.150:9090" />
     <dubbo:registry id="qingdaoRegistry" address="10.20.141.151:9010" default="false" />
     <!-- 向多个注册中心注册 -->
-    <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0" ref="helloService" registry="hangzhouRegistry,qingdaoRegistry" />
+    <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0" 
+        ref="helloService" registry="hangzhouRegistry,qingdaoRegistry" />
 </beans>
 ```
 
@@ -31,15 +35,20 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-    xsi:schemaLocation="http://www.springframework.org/schema/beanshttp://www.springframework.org/schema/beans/spring-beans.xsdhttp://code.alibabatech.com/schema/dubbohttp://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="world"  />
     <!-- 多注册中心配置 -->
     <dubbo:registry id="chinaRegistry" address="10.20.141.150:9090" />
     <dubbo:registry id="intlRegistry" address="10.20.154.177:9010" default="false" />
     <!-- 向中文站注册中心注册 -->
-    <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0" ref="helloService" registry="chinaRegistry" />
+    <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0" 
+        ref="helloService" registry="chinaRegistry" />
     <!-- 向国际站注册中心注册 -->
-    <dubbo:service interface="com.alibaba.hello.api.DemoService" version="1.0.0" ref="demoService" registry="intlRegistry" />
+    <dubbo:service interface="com.alibaba.hello.api.DemoService" version="1.0.0" 
+        ref="demoService" registry="intlRegistry" />
 </beans>
 ```
 
@@ -52,15 +61,20 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-    xsi:schemaLocation="http://www.springframework.org/schema/beanshttp://www.springframework.org/schema/beans/spring-beans.xsdhttp://code.alibabatech.com/schema/dubbohttp://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="world"  />
     <!-- 多注册中心配置 -->
     <dubbo:registry id="chinaRegistry" address="10.20.141.150:9090" />
     <dubbo:registry id="intlRegistry" address="10.20.154.177:9010" default="false" />
     <!-- 引用中文站服务 -->
-    <dubbo:reference id="chinaHelloService" interface="com.alibaba.hello.api.HelloService" version="1.0.0" registry="chinaRegistry" />
+    <dubbo:reference id="chinaHelloService" interface="com.alibaba.hello.api.HelloService" 
+        version="1.0.0" registry="chinaRegistry" />
     <!-- 引用国际站站服务 -->
-    <dubbo:reference id="intlHelloService" interface="com.alibaba.hello.api.HelloService" version="1.0.0" registry="intlRegistry" />
+    <dubbo:reference id="intlHelloService" interface="com.alibaba.hello.api.HelloService" 
+        version="1.0.0" registry="intlRegistry" />
 </beans>
 ```
 
@@ -71,12 +85,16 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-    xsi:schemaLocation="http://www.springframework.org/schema/beanshttp://www.springframework.org/schema/beans/spring-beans.xsdhttp://code.alibabatech.com/schema/dubbohttp://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="world"  />
     <!-- 多注册中心配置，竖号分隔表示同时连接多个不同注册中心，同一注册中心的多个集群地址用逗号分隔 -->
     <dubbo:registry address="10.20.141.150:9090|10.20.154.177:9010" />
     <!-- 引用服务 -->
-    <dubbo:reference id="helloService" interface="com.alibaba.hello.api.HelloService" version="1.0.0" />
+    <dubbo:reference id="helloService" interface="com.alibaba.hello.api.HelloService"
+        version="1.0.0" />
 </beans>
 ```
 
