@@ -25,12 +25,12 @@ consumer端：
 > 2. consumer端请使用如下形式：
 > ```xml
 > <dubbo:consumer client="netty">
->   <dubbo:reference />
+>      <dubbo:reference />
 > </dubbo:consumer>
 > ```
 > ```xml
 > <dubbo:consumer client="netty4">
->   <dubbo:reference />
+>      <dubbo:reference />
 > </dubbo:consumer>
 > ```
 
