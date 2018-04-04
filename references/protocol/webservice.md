@@ -4,8 +4,8 @@
 
 可以和原生 WebService 服务互操作，即：
   
-* 提供者用 Dubbo 的 WebService 协议暴露服务，消费者直接用标准 WebService 接口调用，
-* 或者提供方用标准 WebService 暴露服务，消费方用 Dubbo 的 WebService 协议调用。  
+* 提供者用 Dubbo 的 WebService 协议暴露服务，消费者用标准 WebService 调用
+* 提供者用标准 WebService 暴露服务，消费者用 Dubbo 的 WebService 协议调用。  
 
 ## 依赖
 
