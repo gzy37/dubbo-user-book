@@ -21,7 +21,8 @@ Simple 注册中心本身就是一个普通的 Dubbo 服务，可以减少第三
     <dubbo:protocol port="9090" />
     <!-- 暴露服务配置 -->
     <dubbo:service interface="com.alibaba.dubbo.registry.RegistryService"
-        ref="registryService" registry="N/A" ondisconnect="disconnect" callbacks="1000">
+        ref="registryService" registry="N/A" ondisconnect="disconnect" 
+        callbacks="1000">
         <dubbo:method name="subscribe">
             <dubbo:argument index="1" callback="true" />
         </dubbo:method>
