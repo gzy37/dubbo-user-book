@@ -13,8 +13,8 @@
 在 Java 代码获取 barService 并开始泛化调用：
 
 ```java
-GenericService barService = (GenericService) applicationContext.getBean("barService");
-Object result = barService.$invoke("sayHello", new String[] { "java.lang.String" }, new Object[] { "World" });
+GenericService bs= (GenericService) applicationContext.getBean("barService");
+Object result = bs.$invoke("sayHello",new String[]{"java.lang.String"}, new Object[]{"World"});
 ```
 
 ## 通过 API 方式使用泛化调用
