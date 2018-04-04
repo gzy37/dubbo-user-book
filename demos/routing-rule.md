@@ -7,8 +7,10 @@
 向注册中心写入路由规则的操作通常由监控中心或治理中心的页面完成
 
 ```java
-RegistryFactory registryFactory = ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
-Registry registry = registryFactory.getRegistry(URL.valueOf("zookeeper://10.20.153.10:2181"));
+RegistryFactory registryFactory = 
+    ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
+Registry registry = 
+    registryFactory.getRegistry(URL.valueOf("zookeeper://10.20.153.10:2181"));
 registry.register(URL.valueOf("condition://0.0.0.0/com.foo.BarService?category=routers&dynamic=false&rule=" + URL.encode("host = 10.20.153.10 => host = 10.20.153.11") + "));
 ```
 
