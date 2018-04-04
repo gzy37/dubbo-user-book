@@ -22,7 +22,8 @@ Dubbo 允许配置多协议，在不同服务上支持不同协议或者同一�
     <dubbo:protocol name="dubbo" port="20880" />
     <dubbo:protocol name="rmi" port="1099" />
     <!-- 使用dubbo协议暴露服务 -->
-    <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0" ref="helloService" protocol="dubbo" />
+    <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0"
+        ref="helloService" protocol="dubbo" />
     <!-- 使用rmi协议暴露服务 -->
     <dubbo:service interface="com.alibaba.hello.api.DemoService"
         version="1.0.0" ref="demoService" protocol="rmi" /> 
@@ -43,12 +44,14 @@ Dubbo 允许配置多协议，在不同服务上支持不同协议或者同一�
         http://code.alibabatech.com/schema/dubbo
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="world"  />
-    <dubbo:registry id="registry" address="10.20.141.150:9090" username="admin" password="hello1234" />
+    <dubbo:registry id="registry" address="10.20.141.150:9090" username="admin"
+        password="hello1234" />
     <!-- 多协议配置 -->
     <dubbo:protocol name="dubbo" port="20880" />
     <dubbo:protocol name="hessian" port="8080" />
     <!-- 使用多个协议暴露服务 -->
-    <dubbo:service id="helloService" interface="com.alibaba.hello.api.HelloService" version="1.0.0" protocol="dubbo,hessian" />
+    <dubbo:service id="helloService" interface="com.alibaba.hello.api.HelloService"
+        version="1.0.0" protocol="dubbo,hessian" />
 </beans>
 ```
 

@@ -18,7 +18,8 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
     <dubbo:application name="world"  />
     <!-- 多注册中心配置 -->
     <dubbo:registry id="hangzhouRegistry" address="10.20.141.150:9090" />
-    <dubbo:registry id="qingdaoRegistry" address="10.20.141.151:9010" default="false" />
+    <dubbo:registry id="qingdaoRegistry" address="10.20.141.151:9010"
+        default="false" />
     <!-- 向多个注册中心注册 -->
     <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0" 
         ref="helloService" registry="hangzhouRegistry,qingdaoRegistry" />
@@ -42,7 +43,8 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
     <dubbo:application name="world"  />
     <!-- 多注册中心配置 -->
     <dubbo:registry id="chinaRegistry" address="10.20.141.150:9090" />
-    <dubbo:registry id="intlRegistry" address="10.20.154.177:9010" default="false" />
+    <dubbo:registry id="intlRegistry" address="10.20.154.177:9010"
+        default="false" />
     <!-- 向中文站注册中心注册 -->
     <dubbo:service interface="com.alibaba.hello.api.HelloService" version="1.0.0" 
         ref="helloService" registry="chinaRegistry" />
@@ -70,10 +72,10 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
     <dubbo:registry id="chinaRegistry" address="10.20.141.150:9090" />
     <dubbo:registry id="intlRegistry" address="10.20.154.177:9010" default="false" />
     <!-- 引用中文站服务 -->
-    <dubbo:reference id="chinaHelloService" interface="com.alibaba.hello.api.HelloService" 
+    <dubbo:reference id="chinaHelloService" interface="com.alibaba.hello.HelloService" 
         version="1.0.0" registry="chinaRegistry" />
     <!-- 引用国际站站服务 -->
-    <dubbo:reference id="intlHelloService" interface="com.alibaba.hello.api.HelloService" 
+    <dubbo:reference id="intlHelloService" interface="com.alibaba.hello.HelloService" 
         version="1.0.0" registry="intlRegistry" />
 </beans>
 ```

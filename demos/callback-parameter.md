@@ -39,14 +39,14 @@ import com.callback.CallbackService;
  
 public class CallbackServiceImpl implements CallbackService {
      
-    private final Map<String, CallbackListener> listeners = new ConcurrentHashMap<String, CallbackListener>();
+    private final Map<String, CallbackListener> l = new ConcurrentHashMap<String, CallbackListener>();
   
     public CallbackServiceImpl() {
         Thread t = new Thread(new Runnable() {
             public void run() {
                 while(true) {
                     try {
-                        for(Map.Entry<String, CallbackListener> entry : listeners.entrySet()){
+                        for(Map.Entry<String, CallbackListener> entry : l.entrySet()){
                            try {
                                entry.getValue().changed(getChanged(entry.getKey()));
                            } catch (Throwable t) {
@@ -79,7 +79,8 @@ public class CallbackServiceImpl implements CallbackService {
 
 ```xml
 <bean id="callbackService" class="com.callback.impl.CallbackServiceImpl" />
-<dubbo:service interface="com.callback.CallbackService" ref="callbackService" connections="1" callbacks="1000">
+<dubbo:service interface="com.callback.CallbackService" ref="callbackService" 
+    connections="1" callbacks="1000">
     <dubbo:method name="addListener">
         <dubbo:argument index="1" callback="true" />
         <!--也可以通过指定类型的方式-->

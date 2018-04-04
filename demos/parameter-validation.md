@@ -144,7 +144,8 @@ public interface ValidationService {
 ### 在服务器端验证参数
 
 ```xml
-<dubbo:service interface="com.alibaba.dubbo.examples.validation.api.ValidationService" ref="validationService" validation="true" />
+<dubbo:service interface="com.alibaba.dubbo.examples.validation.api.ValidationService" 
+    ref="validationService" validation="true" />
 ```
 
 ## 验证异常信息
