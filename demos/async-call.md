@@ -8,10 +8,10 @@
 
 ```xml
 <dubbo:reference id="fooService" interface="com.alibaba.foo.FooService">
-      <dubbo:method name="findFoo" async="true" />
+     <dubbo:method name="findFoo" async="true" />
 </dubbo:reference>
 <dubbo:reference id="barService" interface="com.alibaba.bar.BarService">
-      <dubbo:method name="findBar" async="true" />
+     <dubbo:method name="findBar" async="true" />
 </dubbo:reference>
 ```
 
