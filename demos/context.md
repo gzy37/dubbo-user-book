@@ -14,7 +14,7 @@ boolean isConsumerSide = RpcContext.getContext().isConsumerSide();
 // 获取最后一次调用的提供方IP地址
 String serverIP = RpcContext.getContext().getRemoteHost();
 // 获取当前服务配置信息，所有配置信息都将转换为URL的参数
-String application = RpcContext.getContext().getUrl().getParameter("application");
+String app = RpcContext.getContext().getUrl().getParameter("application");
 // 注意：每发起RPC调用，上下文状态会变化
 yyyService.yyy();
 ```
@@ -22,8 +22,7 @@ yyyService.yyy();
 ## 服务提供方
 
 ```java
-public class XxxServiceImpl implements XxxService {
- 
+public class XxxServiceImpl implements XxxService { 
     public void xxx() {
         // 本端是否为提供端，这里会返回true
         boolean isProviderSide = RpcContext.getContext().isProviderSide();

@@ -39,8 +39,8 @@ public class ValidationParameter implements Serializable {
     @NotNull // 不允许为空
     @Size(min = 1, max = 20) // 长度或大小范围
     private String name;
- 
-    @NotNull(groups = ValidationService.Save.class) // 保存时不允许为空，更新时允许为空 ，表示不更新该字段
+    // 保存时不允许为空，更新时允许为空 ，表示不更新该字段
+    @NotNull(groups = ValidationService.Save.class) 
     @Pattern(regexp = "^\\s*\\w+(?:\\.{0,1}[\\w-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\\.[a-zA-Z]+\\s*$")
     private String email;
  
@@ -99,8 +99,10 @@ public class ValidationParameter implements Serializable {
 ### 分组验证示例
 
 ```java
-public interface ValidationService { // 缺省可按服务接口区分验证场景，如：@NotNull(groups = ValidationService.class)   
-    @interface Save{} // 与方法同名接口，首字母大写，用于区分验证场景，如：@NotNull(groups = ValidationService.Save.class)，可选
+// 缺省可按服务接口区分验证场景，如：@NotNull(groups = ValidationService.class)   
+public interface ValidationService { 
+     // 与方法同名接口，首字母大写，用于区分验证场景，可选
+    @interface Save{}
     void save(ValidationParameter parameter);
     void update(ValidationParameter parameter);
 }
@@ -138,13 +140,14 @@ public interface ValidationService {
 ### 在客户端验证参数
 
 ```xml
-<dubbo:reference id="validationService" interface="com.alibaba.dubbo.examples.validation.api.ValidationService" validation="true" />
+<dubbo:reference id="validationService" validation="true"
+    interface="com.alibaba.dubbo.examples.validation.api.ValidationService"/>
 ```
 
 ### 在服务器端验证参数
 
 ```xml
-<dubbo:service interface="com.alibaba.dubbo.examples.validation.api.ValidationService" 
+<dubbo:service interface="com.alibaba.dubbo.examples.validation.api.ValidationService"
     ref="validationService" validation="true" />
 ```
 
