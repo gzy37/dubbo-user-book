@@ -94,7 +94,7 @@ wrapper.appendChild(el);
 | proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 生成动态代理方式，可选：jdk、javassist |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
 | deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 服务是否过时，true表示消费方引用时将打印服务过时警告日志 |
-| queues | queues | 整数 | 可选 | 0 | 性能<br>调优 | 线程池队列大小，当线程池满时，排队等待执行的队列大小，建议不要设置，当线程池满时应立即失败，重试其它服务提供机器。 |
+| queues | queues | 整数 | 可选 | 0 | 性能<br>调优 | 线程池队列大小，建议不要设置，当线程池满时应立即失败，重试其它服务提供机器。 |
 | charset | charset | 字符串 | 可选 | UTF-8 | 性能<br>调优 | 序列化编码 |
 | buffer | buffer | 整数 | 可选 | 8192 | 性能<br>调优 | 网络读写缓冲区大小 |
 | iothreads | iothreads | 整数 | 可选 | CPU + 1 | 性能<br>调优 | IO线程池，接收网络读写中断，以及序列化和反序列化，不处理业务|
