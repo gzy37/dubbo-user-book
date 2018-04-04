@@ -92,7 +92,7 @@ Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分�
         http://code.alibabatech.com/schema/dubbo
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="world"  />
-    <!-- 多注册中心配置，竖号分隔表示同时连接多个不同注册中心，同一注册中心的多个集群地址用逗号分隔 -->
+    <!-- 多注册中心配置，竖号分隔表示连接多个不同注册中心，同一注册中心的多个集群地址用逗号分隔 -->
     <dubbo:registry address="10.20.141.150:9090|10.20.154.177:9010" />
     <!-- 引用服务 -->
     <dubbo:reference id="helloService" interface="com.alibaba.hello.api.HelloService"
