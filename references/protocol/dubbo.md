@@ -31,11 +31,11 @@ Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据
 
 | 数据通讯 | 情况 | 结果 |
 | ------------- | ------------- | ------------- |
-| A->B  | 类A多一种 属性（或者说类B少一种 属性）| 不抛异常，A多的那 个属性的值，B没有， 其他正常 |
-| A->B  | 枚举A多一种 枚举（或者说B少一种 枚举），A使用多 出来的枚举进行传输 | 抛异常 |
-| A->B | 枚举A多一种 枚举（或者说B少一种 枚举），A不使用 多出来的枚举进行传输 | 不抛异常，B正常接 收数据 |
-| A->B | A和B的属性 名相同，但类型不相同 | 抛异常 |
-| A->B | serialId 不相同 | 正常传输 |
+| A->B  | 类A多一种属性(或者说类B少一种属性)| 不抛异常，A多的那个属性的值，B没有，其他正常 |
+| A->B  | 枚举A多一种枚举(或者说B少一种枚举)，A使用多出来的枚举进行传输 | 抛异常 |
+| A->B | 枚举A多一种枚举(或者说B少一种枚举)，A不使用多出来的枚举进行传输 | 不抛异常，B正常接收数据 |
+| A->B | A和B的属性名相同，但类型不相同 | 抛异常 |
+| A->B | serialId不相同 | 正常传输 |
 
 接口增加方法，对客户端无影响，如果该方法不是客户端需要的，客户端不需要重新部署。输入参数和结果集中增加属性，对客户端无影响，如果客户端并不需要新属性，不用重新部署。
 
@@ -73,7 +73,9 @@ Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据
 配置协议选项：
 
 ```xml
-<dubbo:protocol name=“dubbo” port=“9090” server=“netty” client=“netty” codec=“dubbo” serialization=“hessian2” charset=“UTF-8” threadpool=“fixed” threads=“100” queues=“0” iothreads=“9” buffer=“8192” accepts=“1000” payload=“8388608” />
+<dubbo:protocol name=“dubbo” port=“9090” server=“netty” client=“netty” codec=“dubbo” 
+    serialization=“hessian2” charset=“UTF-8” threadpool=“fixed” threads=“100” queues=“0” 
+    iothreads=“9” buffer=“8192” accepts=“1000” payload=“8388608” />
 ```
 
 多连接配置：
