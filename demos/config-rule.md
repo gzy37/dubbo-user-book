@@ -3,8 +3,10 @@
 向注册中心写入动态配置覆盖规则 [^1]。该功能通常由监控中心或治理中心的页面完成。
 
 ```java
-RegistryFactory registryFactory = ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
-Registry registry = registryFactory.getRegistry(URL.valueOf("zookeeper://10.20.153.10:2181"));
+RegistryFactory registryFactory = 
+    ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
+Registry registry = 
+    registryFactory.getRegistry(URL.valueOf("zookeeper://10.20.153.10:2181"));
 registry.register(URL.valueOf("override://0.0.0.0/com.foo.BarService?category=configurators&dynamic=false&application=foo&timeout=1000"));
 ```
 
