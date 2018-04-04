@@ -47,8 +47,10 @@ provider.xml：
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
- 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd"> 
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="hello-world-app"  />
  
@@ -75,7 +77,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  
 public class Provider {
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"http://10.20.160.198/wiki/display/dubbo/provider.xml"});
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+            new String[] {"http://10.20.160.198/wiki/display/dubbo/provider.xml"});
         context.start();
         System.in.read(); // 按任意键退出
     }
@@ -95,8 +98,10 @@ consumer.xml：
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
- 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd"> 
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
     <dubbo:application name="consumer-of-helloworld-app"  />
  
@@ -118,7 +123,8 @@ import com.alibaba.dubbo.demo.DemoService;
  
 public class Consumer {
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"http://10.20.160.198/wiki/display/dubbo/consumer.xml"});
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+            new String[] {"http://10.20.160.198/wiki/display/dubbo/consumer.xml"});
         context.start();
         DemoService demoService = (DemoService)context.getBean("demoService"); // 获取远程服务代理
         String hello = demoService.sayHello("world"); // 执行远程方法
