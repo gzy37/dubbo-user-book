@@ -109,7 +109,7 @@ consumer.xml：
     <dubbo:registry address="multicast://224.5.6.7:1234" />
  
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-    <dubbo:reference id="demoService" interface="com.alibaba.dubbo.demo.DemoService" />
+    <dubbo:reference id="demoService" interface="com.alibaba.dubbo.demo.DemoService"/>
 </beans>
 ```
 
