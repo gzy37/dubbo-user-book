@@ -37,10 +37,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.callback.CallbackListener;
 import com.callback.CallbackService;
  
-public class CallbackServiceImpl implements CallbackService {
-     
-    private final Map<String, CallbackListener> l = new ConcurrentHashMap<String, CallbackListener>();
-  
+public class CallbackServiceImpl implements CallbackService {     
+    private final Map<String, CallbackListener> l = 
+        new ConcurrentHashMap<String, CallbackListener>();  
     public CallbackServiceImpl() {
         Thread t = new Thread(new Runnable() {
             public void run() {
@@ -70,7 +69,7 @@ public class CallbackServiceImpl implements CallbackService {
     }
      
     private String getChanged(String key) {
-        return "Changed: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        return "变更:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
 }
 ```
@@ -98,12 +97,14 @@ public class CallbackServiceImpl implements CallbackService {
 #### 服务消费者调用示例
 
 ```java
-ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:consumer.xml");
+ClassPathXmlApplicationContext context = 
+    new ClassPathXmlApplicationContext("classpath:consumer.xml");
 context.start();
  
 CallbackService callbackService = (CallbackService) context.getBean("callbackService");
  
-callbackService.addListener("http://10.20.160.198/wiki/display/dubbo/foo.bar", new CallbackListener(){
+callbackService.addListener("http://10.20.160.198/wiki/display/dubbo/foo.bar", 
+    new CallbackListener(){
     public void changed(String msg) {
         System.out.println("callback1:" + msg);
     }
