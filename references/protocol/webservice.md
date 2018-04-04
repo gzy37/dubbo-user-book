@@ -66,7 +66,8 @@
 直连：
 
 ```xml
-<dubbo:reference id="helloService" interface="HelloWorld" url="webservice://10.20.153.10:8080/com.foo.HelloWorld" />
+<dubbo:reference id="helloService" interface="HelloWorld" 
+    url="webservice://10.20.153.10:8080/com.foo.HelloWorld" />
 ```
 
 WSDL：
@@ -91,13 +92,13 @@ Servlet Bridge Server (推荐)：
  
 ```xml
 <servlet>
-         <servlet-name>dubbo</servlet-name>
-         <servlet-class>com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet</servlet-class>
-         <load-on-startup>1</load-on-startup>
+     <servlet-name>dubbo</servlet-name>
+     <servlet-class>com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet</servlet-class>
+     <load-on-startup>1</load-on-startup>
 </servlet>
 <servlet-mapping>
-         <servlet-name>dubbo</servlet-name>
-         <url-pattern>/*</url-pattern>
+     <servlet-name>dubbo</servlet-name>
+     <url-pattern>/*</url-pattern>
 </servlet-mapping>
 ```
 
