@@ -5,8 +5,10 @@
 向注册中心写入动态配置覆盖规则：
 
 ```java
-RegistryFactory registryFactory = ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
-Registry registry = registryFactory.getRegistry(URL.valueOf("zookeeper://10.20.153.10:2181"));
+RegistryFactory registryFactory = 
+    ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
+Registry registry = 
+    registryFactory.getRegistry(URL.valueOf("zookeeper://10.20.153.10:2181"));
 registry.register(URL.valueOf("override://0.0.0.0/com.foo.BarService?category=configurators&dynamic=false&application=foo&mock=force:return+null"));
 ```
 
