@@ -69,7 +69,7 @@ public class CallbackServiceImpl implements CallbackService {
     }
      
     private String getChanged(String key) {
-        return "变更:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        return "变更:"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
 }
 ```
