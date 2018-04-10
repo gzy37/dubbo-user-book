@@ -101,9 +101,9 @@ ClassPathXmlApplicationContext context =
     new ClassPathXmlApplicationContext("classpath:consumer.xml");
 context.start();
  
-CallbackService callbackService = (CallbackService) context.getBean("callbackService");
+CallbackService c= (CallbackService)context.getBean("callbackService");
  
-callbackService.addListener("http://10.20.160.198/wiki/display/dubbo/foo.bar", 
+c.addListener("http://10.20.160.198/wiki/display/dubbo/foo.bar", 
     new CallbackListener(){
     public void changed(String msg) {
         System.out.println("callback1:" + msg);
