@@ -62,7 +62,6 @@ table tr:hover {
     <dubbo:registry address="multicast://224.5.6.7:1234" />  
     <dubbo:protocol name="dubbo" port="20880" />  
     <dubbo:service interface="com.alibaba.dubbo.DemoService" ref="demoServiceLocal"/>
-    <dubbo:reference id="demoServiceRemote" interface="com.alibaba.dubbo.DemoService"/>  
 </beans>
 ```
 
