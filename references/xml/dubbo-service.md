@@ -54,7 +54,7 @@ wrapper.appendChild(el);
 
 服务提供者暴露服务配置。对应的配置类：`com.alibaba.dubbo.config.ServiceConfig`
 
-| 属性 | 对应URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
+| 属性 | 对应<br>URL参数 | 类型 | 是否<br>必填 | 缺省值 | 作用 | 描述 |
 | --- | --- | ---- | --- | --- | --- | --- |
 | interface | | 类 | <b>必填</b> | | 服务<br>发现 | 服务接口名 |
 | ref | | 对象 | <b>必填</b> | | 服务<br>发现 | 服务对象实现引用 |
