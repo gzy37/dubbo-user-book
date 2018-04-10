@@ -2,7 +2,7 @@
 
 上下文中存放的是当前调用过程中所需的环境信息，所有配置信息都将转换为 URL 的参数。
 
-RpcContext 是一个 ThreadLocal 的临时状态记录器，当接收到 RPC 请求或发起 RPC 请求时，RpcContext 的状态都会变化。比如：A调B，B再调C，则B机器上，B调C之前，RpcContext 记录的是A调B的信息，B调C之后，RpcContext 记录的是B调C的信息。
+RpcContext 是一个 ThreadLocal 的临时状态记录器，当接收到RPC请求或发起RPC请求时，RpcContext 的状态都会变化。比如：A调B，B再调C，则B机器上，B调C之前，RpcContext 记录的是A调B的信息，B调C之后，RpcContext 记录的是B调C的信息。
 
 ## 服务消费方
 
