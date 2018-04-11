@@ -18,7 +18,8 @@ Provider 上尽量多配置 Consumer 端的属性，让 Provider 实现者一开
 
 <dubbo:service interface="com.alibaba.hello.api.WorldService" version="1.0.0" 
     ref="helloService" timeout="300" retry="2" loadbalance="random" actives="0" >
-    <dubbo:method name="findAllPerson" timeout="10000" retries="9" loadbalance="leastactive" actives="5" />
+    <dubbo:method name="findAllPerson" timeout="10000" retries="9" 
+       loadbalance="leastactive" actives="5" />
 <dubbo:service/>
 ```
 
