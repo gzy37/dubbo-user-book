@@ -65,11 +65,11 @@ wrapper.appendChild(el);
 | url | url | 字符串 | 可选 | | 服务<br>治理 | 点对点直连服务提供者地址，将绕过注册中心 |
 | stub | stub | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口客户端本地代理类名 |
 | mock | mock | 类<br>布尔 | 可选 | | 服务<br>治理 | 服务接口调用Mock实现类名|
-| timeout | timeout | 整数 | 可选 |  | 性能<br>调优 | 超时时间(毫秒)默认consumer的timeout |
-| retries | retries | 整数 | 可选 |  | 性能<br>调优 | 重试次数(不含第一次调用)，0表示不需要重试，默认consumer的retries |
-| connections | connections | 整数 | 可选 |  | 性能<br>调优 | 对每个提供者的最大连接数，默认consumer的connections |
-| loadbalance | loadbalance | 字符串 | 可选 |  | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive，默认consumer的loadbalance |
-| async | async | 布尔 | 可选 |  | 性能<br>调优 | 是否异步执行，默认consumer的async |
+| timeout | timeout | 整数 | 可选 |  | 性能<br>调优 | 超时时间(毫秒) |
+| retries | retries | 整数 | 可选 |  | 性能<br>调优 | 重试次数(不含第一次调用)，0表示不需要重试 |
+| connections | connections | 整数 | 可选 |  | 性能<br>调优 | 对每个提供者的最大连接数 |
+| loadbalance | loadbalance | 字符串 | 可选 |  | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
+| async | async | 布尔 | 可选 |  | 性能<br>调优 | 是否异步执行 |
 | generic | generic | 布尔 | 可选 |  | 服务<br>治理 | 是否缺省泛化接口，默认consumer的generic |
 | check | check | 布尔 | 可选 |  | 服务<br>治理 | 启动时检查提供者是否存在，默认consumer的check |
 | cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、threadlocal、jcache等 |
