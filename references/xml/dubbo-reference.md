@@ -68,18 +68,18 @@ wrapper.appendChild(el);
 | timeout | timeout | 整数 | 可选 |  | 性能<br>调优 | 超时时间(毫秒) |
 | retries | retries | 整数 | 可选 |  | 性能<br>调优 | 重试次数(不含第一次调用)，0表示不需要重试 |
 | connections | connections | 整数 | 可选 |  | 性能<br>调优 | 对每个提供者的最大连接数 |
-| loadbalance | loadbalance | 字符串 | 可选 |  | 性能<br>调优 | 负载均衡策略，可选：random、roundrobin、leastactive |
+| loadbalance | loadbalance | 字符串 | 可选 |  | 性能<br>调优 | 负载均衡策略 |
 | async | async | 布尔 | 可选 |  | 性能<br>调优 | 是否异步执行 |
 | generic | generic | 布尔 | 可选 |  | 服务<br>治理 | 是否缺省泛化接口 |
 | check | check | 布尔 | 可选 |  | 服务<br>治理 | 启动时检查提供者是否存在 |
-| cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 以调用参数为key，缓存返回结果，可选：lru、threadlocal、jcache等 |
+| cache | cache | 字符串<br>布尔 | 可选 | | 服务<br>治理 | 缓存返回结果 |
 | validation | validation | 布尔 | 可选 | | 服务<br>治理 | 是否启用JSR303标准注解验证 |
-| proxy | proxy | 布尔 | 可选 | javassist | 性能<br>调优 | 选择动态代理实现策略，可选：javassist、 jdk |
+| proxy | proxy | 布尔 | 可选 | javassist | 性能<br>调优 | 选择动态代理实现策略 |
 | client | client | 字符串 | 可选 | | 性能<br>调优 | 客户端传输类型 |
-| registry | | 字符串 | 可选 | 将从所有注册中心获服务列表后合并结果 | 配置<br>关联 | 从指定注册中心注册获取服务列表，在多个注册中心时使用，值为registry的id属性，多个注册中心ID用逗号分隔 |
+| registry | | 字符串 | 可选 |  | 配置<br>关联 | 从指定注册中心注册获取服务列表，多个注册中心ID用逗号分隔 |
 | owner | owner | 字符串 | 可选 | | 服务<br>治理 | 调用服务负责人 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 每服务消费者最大并发调用数 |
-| cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式，可选：failover、failfast、failsafe、failback、forking |
+| cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式 |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务调用者所在的分层 |
 | init | init | 布尔 | 可选 | false | 性能<br>调优 | 是否初始化。 |
 | protocol | protocol | 字符串 | 可选 | | 服务<br>治理 | 只调用指定协议的服务提供方，其它协议忽略。 |
