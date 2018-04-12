@@ -80,11 +80,11 @@ wrapper.appendChild(el);
 | weight | weight | 整数 | 可选 | | 性能<br>调优 | 服务权重 |
 | executes | executes | 整数 | 可选 | 0 | 性能<br>调优 | 服务提供者最大并行执行请求数 |
 | actives | actives | 整数 | 可选 | 0 | 性能<br>调优 | 服务消费者最大并发调用数 |
-| proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 动态代理方式，可选：jdk、javassist |
+| proxy | proxy | 字符串 | 可选 | javassist | 性能<br>调优 | 动态代理方式 |
 | cluster | cluster | 字符串 | 可选 | failover | 性能<br>调优 | 集群方式 |
 | filter | service.<br>filter | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方远程调用过程拦截器名称，多个名称用逗号分隔 |
 | listener | exporter.<br>listener | 字符串 | 可选 | default | 性能<br>调优 | 服务提供方导出服务监听器名称，多个名称用逗号分隔 |
-| protocol | | 字符串 | 可选 | | 配置<br>关联 | 暴露服务的协议，值为protocol的id属性，多个协议ID用逗号分隔 |
+| protocol | | 字符串 | 可选 | | 配置<br>关联 | 暴露服务的协议，多个协议ID用逗号分隔 |
 | layer | layer | 字符串 | 可选 | | 服务<br>治理 | 服务提供者所在的分层 |
 | register | register | 布尔 | 可选 | true | 服务<br>治理 | 该协议的服务是否注册到注册中心 |
 
