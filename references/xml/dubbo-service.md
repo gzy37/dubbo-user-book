@@ -58,8 +58,8 @@ wrapper.appendChild(el);
 | --- | --- | ---- | --- | --- | --- | --- |
 | interface | | 类 | <b>必填</b> | | 服务<br>发现 | 服务接口名 |
 | ref | | 对象 | <b>必填</b> | | 服务<br>发现 | 服务对象实现引用 |
-| version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议使用两位数字版本 |
-| group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组，一个接口有多个实现，可以用分组区分 |
+| version | version | 字符串 | 可选 | 0.0.0 | 服务<br>发现 | 服务版本，建议用两位数字版本 |
+| group | group | 字符串 | 可选 | | 服务<br>发现 | 服务分组 |
 | path | &lt;path&gt; | 字符串 | 可选 | 接口名 | 服务<br>发现 | 服务路径 |
 | delay | delay | 整数 | 可选 | 0 | 性能<br>调优 | 服务延迟注册时间(毫秒) ，-1表示Spring容器初始化完成暴露服务 |
 | timeout | timeout | 整数 | 可选 | 1000 | 性能<br>调优 | 服务调用超时时间(毫秒) |
@@ -69,9 +69,9 @@ wrapper.appendChild(el);
 | async | async | 布尔 | 可选 | false | 性能<br>调优 | 是否异步执行 |
 | stub | stub | 类<br>布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省代理类名|
 | mock | mock | 类<br>布尔 | 可选 | false | 服务<br>治理 | true表示使用缺省Mock类名 |
-| token | token | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 令牌验证，false表示不开启，true表示随机生成动态令牌，字符串表示使用静态令牌 |
-| registry | | 字符串 | 可选 | 向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，在多个注册中心时使用，值为registry的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A |
-| provider | | 字符串 | 可选 | 使用第一个provider配置 | 配置<br>关联 | 指定provider，值为provider的id属性 |
+| token | token | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | 令牌验证 |
+| registry | | 字符串 | 可选 | 向所有registry注册 | 配置<br>关联 | 向指定注册中心注册，多个注册中心ID用逗号分隔，如果不想注册可将值设为N/A |
+| provider | | 字符串 | 可选 | 使用第一个provider配置 | 配置<br>关联 | 指定provider |
 | deprecated | deprecated | 布尔 | 可选 | false | 服务<br>治理 | 是否过时，设为true消费方引用时将打印服务过时警告error日志 |
 | dynamic | dynamic | 布尔 | 可选 | true | 服务<br>治理 | 是否动态注册，设为false后需人工启用/禁用服务。 |
 | accesslog | accesslog | 字符串<br>布尔 | 可选 | false | 服务<br>治理 | true表示将向logger中输出访问日志，字符串表示日志文件路径 |
