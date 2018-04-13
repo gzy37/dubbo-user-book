@@ -1,6 +1,6 @@
 # 启动时检查
 
-Dubbo 缺省会在启动时检查依赖的服务是否可用，不可用时会抛出异常，阻止 Spring 初始化完成，以便上线时，能及早发现问题，默认  `check="true"`。  
+Dubbo 缺省会在启动时检查依赖的服务是否可用，不可用时会抛出异常，阻止 Spring 初始化完成，以便上线时能及早发现问题，默认  `check="true"`。
 
 可以通过 `check="false"` 关闭检查，比如，测试时，有些服务不关心，或者出现了循环依赖，必须有一方先启动。
 
@@ -10,19 +10,19 @@ Dubbo 缺省会在启动时检查依赖的服务是否可用，不可用时会�
 
 ### 通过 spring 配置文件
 
-关闭某个服务的启动时检查 (没有提供者时报错)：
+关闭某个服务的启动时检查 \(没有提供者时报错\)：
 
 ```xml
 <dubbo:reference interface="com.foo.BarService" check="false" />
 ```
 
-关闭所有服务的启动时检查 (没有提供者时报错)：
+关闭所有服务的启动时检查 \(没有提供者时报错\)：
 
 ```xml
 <dubbo:consumer check="false" />
 ```
 
-关闭注册中心启动时检查 (注册订阅失败时报错)：
+关闭注册中心启动时检查 \(注册订阅失败时报错\)：
 
 ```xml
 <dubbo:registry check="false" />
@@ -53,3 +53,4 @@ java -Ddubbo.registry.check=false
 `dubbo.consumer.check=false`，是设置 check 的缺省值，如果配置中有显式的声明，如：`<dubbo:reference check="true"/>`，不会受影响。
 
 `dubbo.registry.check=false`，前面两个都是指订阅成功，但提供者列表是否为空是否报错，如果注册订阅失败时，也允许启动，需使用此选项，将在后台定时重试。
+
